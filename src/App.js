@@ -31,7 +31,7 @@ function App() {
             <Link to="/counter">Counter</Link>
           </li>
           <li>
-            <Link to="/contact">Contact Me</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
