@@ -4,9 +4,10 @@ export function Contact() {
     return (
     <Container>
         <Typography
-            variant="h3"
+            variant="h4"
             textAlign={"center"}
             marginBottom={7}
+            marginTop={7}
         >
             Get in touch with me!
         </Typography>
