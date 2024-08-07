@@ -6,35 +6,24 @@ import {Currency} from './components/Currency';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
+import {AppBar, Toolbar, Box} from '@mui/material';
 
 function App() {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
+      <AppBar position="static">
+        <Toolbar>
+          <Box sx={{display: "flex", gap:2}}>
             <Link to="/">Home</Link>
-          </li>
-          <li>
             <Link to="/todo">To Do List</Link>
-          </li>
-          <li>
             <Link to="/weather">Weather</Link>
-          </li>
-          <li>
             <Link to="/currency">Currency Converter</Link>
-          </li>
-          <li>
             <Link to="/countdown">Countdown</Link>
-          </li>
-          <li>
             <Link to="/counter">Counter</Link>
-          </li>
-          <li>
             <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+          </Box>
+        </Toolbar>
+      </AppBar>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/todo" element={<ToDoList/>}/>
