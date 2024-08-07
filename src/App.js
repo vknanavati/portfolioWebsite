@@ -14,13 +14,90 @@ function App() {
       <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar>
           <Box sx={{display: "flex", gap:2, ml: "auto"}}>
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
-            <Link to="/todo" style={{ color: 'white', textDecoration: 'none' }}>To Do List</Link>
-            <Link to="/weather" style={{ color: 'white', textDecoration: 'none' }}>Weather</Link>
-            <Link to="/currency" style={{ color: 'white', textDecoration: 'none' }}>Currency Converter</Link>
-            <Link to="/countdown" style={{ color: 'white', textDecoration: 'none' }}>Countdown</Link>
-            <Link to="/counter" style={{ color: 'white', textDecoration: 'none' }}>Counter</Link>
-            <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
+            <Box
+                component={Link}
+                to="/"
+                sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': { color: '#FFEB3B' },
+                  '&:active': { color: '#23FAFA' }
+                }}
+              >
+                Home
+              </Box>
+            <Box
+              component={Link}
+              to="/todo"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
+            >
+              To Do List
+            </Box>
+            <Box
+                component={Link}
+                to="/weather"
+                sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': { color: '#FFEB3B' },
+                  '&:active': { color: '#23FAFA' }
+                }}
+              >
+                Weather
+            </Box>
+            <Box
+                component={Link}
+                to="/currency"
+                sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': { color: '#FFEB3B' },
+                  '&:active': { color: '#23FAFA' }
+                }}
+              >
+                Currency Converter
+            </Box>
+            <Box
+                component={Link}
+                to="/countdown"
+                sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': { color: '#FFEB3B' },
+                  '&:active': { color: '#23FAFA' }
+                }}
+              >
+                Countdown
+            </Box>
+            <Box
+                component={Link}
+                to="/counter"
+                sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': { color: '#FFEB3B' },
+                  '&:active': { color: '#23FAFA' }
+                }}
+              >
+                Counter
+            </Box>
+            <Box
+                component={Link}
+                to="/contact"
+                sx={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  '&:hover': { color: '#FFEB3B' },
+                  '&:active': { color: '#23FAFA' }
+                }}
+              >
+                Contact
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
