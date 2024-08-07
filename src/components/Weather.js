@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Container, Grid, Typography, TextField, Button, Box } from '@mui/material';
-import {makeStyles} from '@mui/styles';
+// import {makeStyles} from '@mui/styles';
 
 console.log(process.env)
 
-const useStyles = makeStyles({
-  weatherData: {
-    color:"#6B117D",
-    fontSize: [24, "!important"]
-  }
-})
+// const useStyles = makeStyles({
+//   weatherData: {
+//     color:"#6B117D",
+//     fontSize: [24, "!important"]
+//   }
+// })
 
 export function Weather() {
-    const classes = useStyles();
+    // const classes = useStyles();
 
     const [city, setCity] = useState("");
     const [weather, setWeather] = useState("");
@@ -82,7 +82,7 @@ export function Weather() {
           </Grid>
         </Grid>
       </form>
-      {weather && (
+      {/* {weather && (
         <Box
           textAlign={"center"}
           padding={2}
@@ -99,7 +99,7 @@ export function Weather() {
         <Typography className={classes.weatherData} sx={{ marginTop:3 }}>{weather.weather[0].description}</Typography>
         <Typography className={classes.weatherData}>{weather.main.temp.toFixed(1)} °F</Typography>
       </Box>
-      )}
+      )} */}
     </Grid>
   </Container>
 )
