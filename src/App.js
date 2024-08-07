@@ -11,16 +11,16 @@ import {AppBar, Toolbar, Box} from '@mui/material';
 function App() {
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar>
-          <Box sx={{display: "flex", gap:2}}>
-            <Link to="/">Home</Link>
-            <Link to="/todo">To Do List</Link>
-            <Link to="/weather">Weather</Link>
-            <Link to="/currency">Currency Converter</Link>
-            <Link to="/countdown">Countdown</Link>
-            <Link to="/counter">Counter</Link>
-            <Link to="/contact">Contact</Link>
+          <Box sx={{display: "flex", gap:2, ml: "auto"}}>
+            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
+            <Link to="/todo" style={{ color: 'white', textDecoration: 'none' }}>To Do List</Link>
+            <Link to="/weather" style={{ color: 'white', textDecoration: 'none' }}>Weather</Link>
+            <Link to="/currency" style={{ color: 'white', textDecoration: 'none' }}>Currency Converter</Link>
+            <Link to="/countdown" style={{ color: 'white', textDecoration: 'none' }}>Countdown</Link>
+            <Link to="/counter" style={{ color: 'white', textDecoration: 'none' }}>Counter</Link>
+            <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
           </Box>
         </Toolbar>
       </AppBar>
