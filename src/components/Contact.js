@@ -8,10 +8,18 @@ export function Contact() {
             textAlign={"center"}
             marginBottom={7}
             marginTop={7}
+            color={"#666666"}
         >
             Get in touch with me!
         </Typography>
-        <Grid>
+        <Grid
+            sx={{
+                backgroundColor: "#e6d7ff",
+                margin: 8,
+                padding: 4,
+                borderRadius: 7
+            }}
+        >
             <Grid
                 container
                 alignItems={"center"}
