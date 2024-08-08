@@ -7,13 +7,21 @@ import {Currency} from './components/Currency';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
-import {AppBar, Toolbar, Box, Container} from '@mui/material';
+import {AppBar, Toolbar, Box, Container, Typography} from '@mui/material';
 
 function App() {
   return (
-    <Container disableGutters>
+    <Container maxWidth={"false"} disableGutters>
       <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar>
+          <Box>
+            <Typography
+              variant="h5"
+              paddingLeft={3}
+            >
+              Vimin Nanavati
+            </Typography>
+          </Box>
           <Box sx={{display: "flex", gap:2, ml: "auto", fontSize: 20, fontWeight: 500}}>
             <Box
               component={Link}
