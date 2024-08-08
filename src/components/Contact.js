@@ -20,7 +20,8 @@ export function Contact() {
                 margin: 8,
                 padding: 4,
                 borderRadius: 7,
-                fontSize: 27
+                fontSize: 27,
+                boxShadow: 4
             }}
         >
             <Grid
