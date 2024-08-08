@@ -1,8 +1,9 @@
 import {Grid, Container, Typography} from '@mui/material';
+import "../App.css"
 
 export function About() {
     return (
-        <Container>
+        <Container maxWidth="false" disableGutters sx={{backgroundColor: "pink"}}>
             <Grid>
                 <Typography
                     variant="h4"
