@@ -60,7 +60,6 @@ export function Currency() {
 
     console.log("Conversion:", conversion)
     return (
-        <>
         <Container>
           <Grid
             container
@@ -70,7 +69,7 @@ export function Currency() {
           >
             <Typography
               variant="h4"
-              marginTop={5}
+              marginTop={7}
               marginBottom={4}
             >
               Currency Conveter
@@ -186,10 +185,9 @@ export function Currency() {
               </Grid>
             </form>
           </Grid>
-        </Container>
           {conversion && <p>{amount} {conversion.query.from} = {conversion.result.toFixed(2)} {conversion.query.to}</p>}
+        </Container>
 
-        </>
 )
 }
 
