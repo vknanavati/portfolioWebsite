@@ -14,7 +14,7 @@ function App() {
     <Container disableGutters>
       <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar>
-          <Box sx={{display: "flex", gap:2, ml: "auto"}}>
+          <Box sx={{display: "flex", gap:2, ml: "auto", fontSize: 20, fontWeight: 500}}>
             <Box
               component={Link}
               to="/"
