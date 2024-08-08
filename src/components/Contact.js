@@ -7,8 +7,10 @@ export function Contact() {
             variant="h4"
             textAlign={"center"}
             marginBottom={7}
-            marginTop={7}
+            marginTop={8}
             color={"#666666"}
+            fontWeight={400}
+            fontSize={60}
         >
             Get in touch with me!
         </Typography>
@@ -17,7 +19,8 @@ export function Contact() {
                 backgroundColor: "#e6d7ff",
                 margin: 8,
                 padding: 4,
-                borderRadius: 7
+                borderRadius: 7,
+                fontSize: 27
             }}
         >
             <Grid
