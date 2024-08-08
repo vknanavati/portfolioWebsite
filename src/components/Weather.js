@@ -4,7 +4,6 @@ import { Container, Grid, Typography, TextField, Button, Box } from '@mui/materi
 console.log(process.env)
 
 export function Weather() {
-    // const classes = useStyles();
 
     const [city, setCity] = useState("");
     const [weather, setWeather] = useState("");
@@ -25,56 +24,57 @@ export function Weather() {
         })
     }
     return (
-    <Container>
-    <Grid
-      container
-      justifyContent={"center"}
-      alignItems={"center"}
-      direction={"column"}
-    >
-      <Typography
-        variant="h4"
-        sx={{marginTop: 7, marginBottom: 4, color: "#953ef7"}}
-      >
-        Current Weather
-      </Typography>
-      <form>
+
+      <Container>
         <Grid
           container
-          spacing={2}
+          justifyContent={"center"}
           alignItems={"center"}
-          sx={{marginTop: 1}}
+          direction={"column"}
         >
-          <Grid item>
-            <TextField
-              sx={{
-                width: 250,
-                "& .MuiInputBase-root":{
-                  height: 50
+        <Typography
+          variant="h4"
+          sx={{marginTop: 7, marginBottom: 4, color: "#953ef7"}}
+        >
+          Current Weather
+        </Typography>
+        <form>
+          <Grid
+            container
+            spacing={2}
+            alignItems={"center"}
+            sx={{marginTop: 1}}
+          >
+            <Grid item>
+              <TextField
+                sx={{
+                  width: 250,
+                  "& .MuiInputBase-root":{
+                    height: 50
+                  }
+                }}
+                id="city"
+                type="text"
+                placeholder="enter city"
+                value={city}
+                onChange={handleCity}
+              />
+            </Grid>
+            <Grid item>
+              <Button
+                variant="contained"
+                sx={{backgroundColor: "#953ef7",
+                "&:hover": {
+                  backgroundColor: "#953ef7",
                 }
-              }}
-              id="city"
-              type="text"
-              placeholder="enter city"
-              value={city}
-              onChange={handleCity}
-            />
+                }}
+                onClick={e => handleClick(e)}
+              >Search
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Button
-              variant="contained"
-              sx={{backgroundColor: "#953ef7",
-              "&:hover": {
-                backgroundColor: "#953ef7",
-              }
-              }}
-              onClick={e => handleClick(e)}
-            >Search
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-      {weather && (
+        </form>
+        {weather && (
         <Box
           textAlign={"center"}
           padding={2}
@@ -86,13 +86,13 @@ export function Weather() {
           fontSize={20}
           lineHeight={1}
           >
-        <Typography sx={{ marginTop: 1, color:"#6B117D", fontSize: [25, "!important"]}}>{weather.name}</Typography>
-        <img alt="weather-image" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
-        <Typography sx={{ marginTop:2, color:"#6B117D", fontSize: [24, "!important"]}}>{weather.weather[0].description}</Typography>
-        <Typography sx={{ marginTop: 1, color:"#6B117D", fontSize: [24, "!important"]}}>{weather.main.temp.toFixed(1)} °F</Typography>
-      </Box>
-      )}
-    </Grid>
+            <Typography sx={{ marginTop: 1, color:"#6B117D", fontSize: [25, "!important"]}}>{weather.name}</Typography>
+            <img alt="weather-image" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+            <Typography sx={{ marginTop:2, color:"#6B117D", fontSize: [24, "!important"]}}>{weather.weather[0].description}</Typography>
+            <Typography sx={{ marginTop: 1, color:"#6B117D", fontSize: [24, "!important"]}}>{weather.main.temp.toFixed(1)} °F</Typography>
+        </Box>
+        )}
+      </Grid>
   </Container>
 )
 }
