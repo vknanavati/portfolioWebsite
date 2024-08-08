@@ -49,7 +49,13 @@ export function ToDoList() {
     return (
         <Container>
         <Paper
-          sx={{paddingBottom: 10, marginTop: 10, marginBottom: 10}}
+          elevation={24}
+          sx=
+          {{
+            paddingBottom: 10,
+            marginTop: 10,
+            marginBottom: 10
+          }}
         >
         <Grid
         container
@@ -58,8 +64,13 @@ export function ToDoList() {
         direction={"column"}
         >
           <Typography
-          variant="h5"
-          sx={{marginTop: 5, marginBottom: 4}}
+          variant="h4"
+          sx=
+          {{
+            marginTop: 5,
+            marginBottom: 4,
+            color: "#05998C"
+          }}
           >
             To Do List
           </Typography>
@@ -76,7 +87,8 @@ export function ToDoList() {
                       "& .MuiInputBase-root":{
                         height: 45
                       },
-                      fieldset: {borderColor: "black"}
+                      fieldset: {borderColor: "black"},
+                      input: {fontSize: 20}
                     }}
                   type={"text"}
                   value={task}
@@ -104,30 +116,25 @@ export function ToDoList() {
             </Grid>
           </form>
           </Grid>
-          </Paper>
-          <Container>
-          <Box
-            fontSize={27}>
+        </Paper>
+        <Container>
+          <Box>
             {list.map((taskObject, i) => {
               return (
                 <List>
                   <Box
                     display={"flex"}
-                    backgroundColor={"white"}
+                    backgroundColor={"#70D1D0"}
                     justifyContent={"space-between"}
+                    padding={1}
+                    borderRadius={3}
                   >
-                    <Box
-                      display={"flex"}
-                      width={0}
-                    >
-                      <ListItem key={taskObject.id}>
+                    <Box>
+                      <ListItem
+                        key={taskObject.id}>
                         <ListItemText
+                          primaryTypographyProps={{fontSize: '20px'}}
                           primary={taskObject.value}
-                          sx={{
-                            // color: 'blue'
-                            // whiteSpace: 'normal'
-
-                          }}
                         />
                       </ListItem>
                     </Box>
@@ -153,10 +160,10 @@ export function ToDoList() {
                       </Button>
                     </Box>
                   </Box>
-              </List>
+                </List>
               )})}
-              </Box>
-              </Container>
-      </Container>
+            </Box>
+          </Container>
+    </Container>
 )
 }
