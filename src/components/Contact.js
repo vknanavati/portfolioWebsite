@@ -22,15 +22,24 @@ export function Contact() {
                         sx={{maxWidth: 70}}
                         component="img"
                         alt="email-logo"
-                        src="/icons/email-logo.png"
+                        src={`${process.env.PUBLIC_URL}/icons/email-logo.png`}
                     >
                     </Box>
                 </Grid>
                 <Grid>
                     <Box
-                        sx={{marginLeft: 1}}
                         component="a"
                         href="mailto:vimin.nanavati@gmail.com"
+                        sx={{
+                            marginLeft: 1,
+                            color: 'blue',
+                            '&:hover': {
+                                color: 'purple',
+                            },
+                            '&:active': {
+                                color: 'pink',
+                            },
+                        }}
                     >
                         vimin.nanavati@gmail.com
                     </Box>
@@ -46,7 +55,7 @@ export function Contact() {
                         sx={{maxWidth: 80}}
                         component="img"
                         alt="github-logo"
-                        src="/icons/github-logo.png"
+                        src={`${process.env.PUBLIC_URL}/icons/github-logo.png`}
                     >
                     </Box>
                 </Grid>
@@ -56,6 +65,16 @@ export function Contact() {
                         href="https://github.com/vknanavati"
                         target="_blank"
                         rel="noopener noreferrer"
+                        sx={{
+                            marginLeft: 1,
+                            color: 'blue',
+                            '&:hover': {
+                                color: 'purple',
+                            },
+                            '&:active': {
+                                color: 'pink',
+                            },
+                        }}
                     >
                         Github
                     </Box>
@@ -71,7 +90,7 @@ export function Contact() {
                         sx={{maxWidth: 80}}
                         component="img"
                         alt="linkedin-logo"
-                        src="/icons/linkedin-logo.png"
+                        src={`${process.env.PUBLIC_URL}/icons/linkedin-logo.png`}
                     >
                     </Box>
                 </Grid>
@@ -81,6 +100,16 @@ export function Contact() {
                         href="https://www.linkedin.com/in/vimin-nanavati-3510555b/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        sx={{
+                            marginLeft: 1,
+                            color: 'blue',
+                            '&:hover': {
+                                color: 'purple',
+                            },
+                            '&:active': {
+                                color: 'pink',
+                            },
+                        }}
                     >
                         LinkedIn
                     </Box>
