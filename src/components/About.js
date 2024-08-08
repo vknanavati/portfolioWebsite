@@ -14,7 +14,7 @@ export function About() {
                     fontWeight={700}
                     fontSize={60}
                 >
-                    Welcome to my portfolio
+                    About Me
                 </Typography>
                 <Grid
                   sx={{
