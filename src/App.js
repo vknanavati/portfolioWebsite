@@ -1,5 +1,6 @@
 import {Link, Routes, Route} from 'react-router-dom';
 import {Home} from './components/Home';
+import {About} from './components/About';
 import {ToDoList} from './components/ToDoList';
 import {Weather} from './components/Weather';
 import {Currency} from './components/Currency';
@@ -15,17 +16,29 @@ function App() {
         <Toolbar>
           <Box sx={{display: "flex", gap:2, ml: "auto"}}>
             <Box
-                component={Link}
-                to="/"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { color: '#FFEB3B' },
-                  '&:active': { color: '#23FAFA' }
-                }}
+              component={Link}
+              to="/"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
               >
                 Home
-              </Box>
+            </Box>
+            <Box
+              component={Link}
+              to="/about"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
+              >
+                About
+            </Box>
             <Box
               component={Link}
               to="/todo"
@@ -39,62 +52,62 @@ function App() {
               To Do List
             </Box>
             <Box
-                component={Link}
-                to="/weather"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { color: '#FFEB3B' },
-                  '&:active': { color: '#23FAFA' }
-                }}
+              component={Link}
+              to="/weather"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
               >
                 Weather
             </Box>
             <Box
-                component={Link}
-                to="/currency"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { color: '#FFEB3B' },
-                  '&:active': { color: '#23FAFA' }
-                }}
+              component={Link}
+              to="/currency"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
               >
                 Currency Converter
             </Box>
             <Box
-                component={Link}
-                to="/countdown"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { color: '#FFEB3B' },
-                  '&:active': { color: '#23FAFA' }
-                }}
+              component={Link}
+              to="/countdown"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
               >
                 Countdown
             </Box>
             <Box
-                component={Link}
-                to="/counter"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { color: '#FFEB3B' },
-                  '&:active': { color: '#23FAFA' }
-                }}
+              component={Link}
+              to="/counter"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
               >
                 Counter
             </Box>
             <Box
-                component={Link}
-                to="/contact"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { color: '#FFEB3B' },
-                  '&:active': { color: '#23FAFA' }
-                }}
+              component={Link}
+              to="/contact"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
               >
                 Contact
             </Box>
@@ -103,6 +116,7 @@ function App() {
       </AppBar>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/weather" element={<Weather/>}/>
         <Route path="/currency" element={<Currency/>}/>
