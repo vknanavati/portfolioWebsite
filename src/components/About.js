@@ -20,7 +20,8 @@ export function About() {
                   sx={{
                     backgroundColor: "#e6d7ff",
                     padding: 4,
-                    borderRadius: 7
+                    borderRadius: 7,
+                    boxShadow: 6
                 }}
                 >
                     <Grid>
@@ -51,7 +52,8 @@ export function About() {
                         backgroundColor: "#e6d7ff",
                         padding: 3,
                         borderRadius: 7,
-                        fontSize: 25
+                        fontSize: 25,
+                        boxShadow: 6
                     }}
                 >
                     <Grid marginBottom={1}>
