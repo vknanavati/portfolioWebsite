@@ -79,30 +79,30 @@ export function Countdown() {
                 alignItems={"center"}
                 justifyContent={"center"}
                 >
-                <Grid item>
-                    <TextField
-                    sx={{
-                        width: 175,
-                        "& .MuiInputBase-root":{
-                        height: 46},
-                        input: {fontSize: 25}
-                    }}
-                    value={input}
-                    placeholder="enter date"
-                    onChange={e => setInput(e.target.value)}
-                    />
-                </Grid>
-                <Grid item>
-                    <Button
-                    type="submit"
-                    variant="contained"
-                    color="secondary"
-                    sx={{margin:2}}
-                    onClick={e => handleSubmit(e)}
-                    >
-                    Submit
-                    </Button>
-                </Grid>
+                    <Grid item>
+                        <TextField
+                        sx={{
+                            width: 175,
+                            "& .MuiInputBase-root":{
+                            height: 46},
+                            input: {fontSize: 25}
+                        }}
+                        value={input}
+                        placeholder="enter date"
+                        onChange={e => setInput(e.target.value)}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <Button
+                        type="submit"
+                        variant="contained"
+                        color="secondary"
+                        sx={{margin:2}}
+                        onClick={e => handleSubmit(e)}
+                        >
+                        Submit
+                        </Button>
+                    </Grid>
                 </Grid>
                 <Grid>
                     {errorMessage && <Typography color={"red"} fontSize={25} margin={1}>{errorMessage} </Typography>}
