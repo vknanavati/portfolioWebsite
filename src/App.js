@@ -7,11 +7,11 @@ import {Currency} from './components/Currency';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
-import {AppBar, Toolbar, Box} from '@mui/material';
+import {AppBar, Toolbar, Box, Container} from '@mui/material';
 
 function App() {
   return (
-    <>
+    <Container disableGutters>
       <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar>
           <Box sx={{display: "flex", gap:2, ml: "auto"}}>
@@ -124,7 +124,7 @@ function App() {
         <Route path="/counter" element={<Counter/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
-    </>
+    </Container>
   );
 }
 
