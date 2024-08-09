@@ -8,9 +8,25 @@ import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
 import {AppBar, Toolbar, Box, Container, Typography} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'Poppins, sans-serif'
+    },
+    components: {
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            fontFamily: 'Poppins, sans-serif'
+          }
+        }
+      }
+    }
+  });
   return (
+    <ThemeProvider theme={theme}>
     <Container maxWidth={"false"} disableGutters>
       <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar>
@@ -23,102 +39,110 @@ function App() {
             </Typography>
           </Box>
           <Box sx={{display: "flex", gap:2, ml: "auto", fontSize: 20, fontWeight: 500}}>
-            <Box
+            <Typography
               component={Link}
               to="/"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 Home
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/about"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 About
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/todo"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
             >
               To Do List
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/weather"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 Weather
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/currency"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 Currency Converter
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/countdown"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 Countdown
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/counter"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 Counter
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               component={Link}
               to="/contact"
               sx={{
                 color: 'white',
+                fontWeight: 600,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
               }}
               >
                 Contact
-            </Box>
+            </Typography>
           </Box>
         </Toolbar>
       </AppBar>
@@ -133,6 +157,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </Container>
+    </ThemeProvider>
   );
 }
 
