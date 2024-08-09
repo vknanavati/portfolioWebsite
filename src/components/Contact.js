@@ -39,10 +39,11 @@ export function Contact() {
                     </Box>
                 </Grid>
                 <Grid>
-                    <Box
+                    <Typography
                         component="a"
                         href="mailto:vimin.nanavati@gmail.com"
                         sx={{
+                            fontSize: 25,
                             marginLeft: 1,
                             color: 'blue',
                             '&:hover': {
@@ -54,7 +55,7 @@ export function Contact() {
                         }}
                     >
                         vimin.nanavati@gmail.com
-                    </Box>
+                    </Typography>
                 </Grid>
             </Grid>
             <Grid
@@ -72,13 +73,14 @@ export function Contact() {
                     </Box>
                 </Grid>
                 <Grid>
-                    <Box
+                    <Typography
                         component="a"
                         href="https://github.com/vknanavati"
                         target="_blank"
                         rel="noopener noreferrer"
                         sx={{
                             marginLeft: 1,
+                            fontSize: 25,
                             color: 'blue',
                             '&:hover': {
                                 color: 'purple',
@@ -89,7 +91,7 @@ export function Contact() {
                         }}
                     >
                         Github
-                    </Box>
+                    </Typography>
                 </Grid>
             </Grid>
             <Grid
@@ -107,13 +109,14 @@ export function Contact() {
                     </Box>
                 </Grid>
                 <Grid>
-                    <Box
+                    <Typography
                         component="a"
                         href="https://www.linkedin.com/in/vimin-nanavati-3510555b/"
                         target="_blank"
                         rel="noopener noreferrer"
                         sx={{
                             marginLeft: 1,
+                            fontSize: 25,
                             color: 'blue',
                             '&:hover': {
                                 color: 'purple',
@@ -124,7 +127,7 @@ export function Contact() {
                         }}
                     >
                         LinkedIn
-                    </Box>
+                    </Typography>
                 </Grid>
             </Grid>
         </Grid>
