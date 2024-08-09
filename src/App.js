@@ -33,7 +33,7 @@ function App() {
           <Box>
             <Typography
               variant="h5"
-              paddingLeft={3}
+              paddingLeft={1}
             >
               Vimin Nanavati
             </Typography>
