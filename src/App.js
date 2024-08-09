@@ -29,16 +29,35 @@ function App() {
     <ThemeProvider theme={theme}>
     <Container maxWidth={"false"} disableGutters>
       <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
-        <Toolbar>
-          <Box>
-            <Typography
-              variant="h5"
-              paddingLeft={1}
-            >
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap' }}
+        >
+          <Box
+            sx={{
+              flexShrink: 0,
+              paddingLeft: 1
+            }}
+          >
+            <Typography variant="h5">
               Vimin Nanavati
             </Typography>
           </Box>
-          <Box sx={{display: "flex", gap:2, ml: "auto", fontSize: 20, fontWeight: 500}}>
+          <Box sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                textAlign: "center",
+                gap:2,
+                ml: "auto",
+                fontSize: 20,
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+                overflow: "auto",
+                flexShrink: 1
+              }}>
             <Typography
               component={Link}
               to="/"
