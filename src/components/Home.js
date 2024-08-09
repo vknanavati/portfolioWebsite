@@ -12,8 +12,9 @@ export function Home() {
                     color={"#666666"}
                     fontWeight={700}
                     fontSize={60}
+                    letterSpacing={"0.05rem"}
                 >
-                    Welcome to my portfolio
+                    Welcome to my Portfolio
                 </Typography>
                 <Grid
                     container
