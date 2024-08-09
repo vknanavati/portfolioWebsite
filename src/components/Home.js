@@ -1,4 +1,4 @@
-import {Grid, Container, Typography} from '@mui/material';
+import {Grid, Container, Typography, Box} from '@mui/material';
 
 export function Home() {
     return (
@@ -16,42 +16,56 @@ export function Home() {
                 >
                     Welcome to my Portfolio
                 </Typography>
-                <Grid
-                    container
-                    justifyContent={"center"}
-                    alignItems={"center"}
+                <Box
+                    sx={{
+                        display:"flex",
+                        overflowX: "auto",
+                        whiteSpace: "nowrap",
+                        width: "100%"
+                    }}
                 >
-                    <Grid container>
+                    <Grid
+                        container
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                    >
+                        <Grid
+                            container
+                            justifyContent={"center"}
+                            alignItems={"center"}
+                            sx={{flexWrap: "nowrap"}}
+                        >
+                            <Grid
+                                component="img"
+                                alt="to-do-list-image"
+                                src={`${process.env.PUBLIC_URL}/icons/todolist.png`}
+                                sx={{maxWidth: 800,
+                                    marginRight: 12
+                                }}
+                            />
+                            <Grid
+                                component="img"
+                                alt="weather-image"
+                                src={`${process.env.PUBLIC_URL}/icons/weather.png`}
+                                sx={{maxWidth: 600}}
+                            />
+                        </Grid>
+                    <Grid>
                         <Grid
                             component="img"
-                            alt="to-do-list-image"
-                            src={`${process.env.PUBLIC_URL}/icons/todolist.png`}
-                            sx={{maxWidth: "50%",
-                                marginRight: 12
-                            }}
+                            alt="countdown-image"
+                            src={`${process.env.PUBLIC_URL}/icons/countdown.png`}
+                            sx={{maxWidth: 700}}
                         />
                         <Grid
                             component="img"
-                            alt="weather-image"
-                            src={`${process.env.PUBLIC_URL}/icons/weather.png`}
+                            alt="counter-image"
+                            src={`${process.env.PUBLIC_URL}/icons/counter.png`}
                             sx={{maxWidth: 600}}
                         />
                     </Grid>
-                <Grid>
-                    <Grid
-                        component="img"
-                        alt="countdown-image"
-                        src={`${process.env.PUBLIC_URL}/icons/countdown.png`}
-                        sx={{maxWidth: 700}}
-                    />
-                    <Grid
-                        component="img"
-                        alt="counter-image"
-                        src={`${process.env.PUBLIC_URL}/icons/counter.png`}
-                        sx={{maxWidth: 600}}
-                    />
                 </Grid>
-            </Grid>
+            </Box>
         </Grid>
     </Container>
 )
