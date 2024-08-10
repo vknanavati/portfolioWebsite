@@ -35,6 +35,12 @@ export function Home() {
                             alignItems={"center"}
                             sx={{flexWrap: "nowrap"}}
                         >
+                            <Box
+                                component="a"
+                                href="https://vknanavati.github.io/portfolioWebsite/todo"
+                                // target="_blank"
+                                // rel="noopener noreferrer"
+                            >
                             <Grid
                                 component="img"
                                 alt="to-do-list-image"
@@ -43,6 +49,7 @@ export function Home() {
                                     marginRight: 12
                                 }}
                             />
+                            </Box>
                             <Grid
                                 component="img"
                                 alt="weather-image"
