@@ -37,7 +37,7 @@ export function Home() {
                         >
                             <Box
                                 component="a"
-                                href="https://vknanavati.github.io/portfolioWebsite/todo"
+                                href="https://vknanavati.github.io/portfolioWebsite/#/todo"
                                 // target="_blank"
                                 // rel="noopener noreferrer"
                             >
