@@ -38,38 +38,51 @@ export function Home() {
                             <Box
                                 component="a"
                                 href="https://vknanavati.github.io/portfolioWebsite/#/todo"
-                                // target="_blank"
-                                // rel="noopener noreferrer"
                             >
-                            <Grid
-                                component="img"
-                                alt="to-do-list-image"
-                                src={`${process.env.PUBLIC_URL}/icons/todolist.png`}
-                                sx={{maxWidth: 800,
-                                    marginRight: 12
-                                }}
-                            />
+                                <Grid
+                                    component="img"
+                                    alt="to-do-list-image"
+                                    src={`${process.env.PUBLIC_URL}/icons/todolist.png`}
+                                    sx={{maxWidth: 800,
+                                        marginRight: 12
+                                    }}
+                                />
                             </Box>
-                            <Grid
-                                component="img"
-                                alt="weather-image"
-                                src={`${process.env.PUBLIC_URL}/icons/weather.png`}
-                                sx={{maxWidth: 600}}
-                            />
+                            <Box
+                                component="a"
+                                href="https://vknanavati.github.io/portfolioWebsite/#/weather"
+                            >
+                                <Grid
+                                    component="img"
+                                    alt="weather-image"
+                                    src={`${process.env.PUBLIC_URL}/icons/weather.png`}
+                                    sx={{maxWidth: 600}}
+                                />
+                            </Box>
                         </Grid>
                     <Grid>
-                        <Grid
-                            component="img"
-                            alt="countdown-image"
-                            src={`${process.env.PUBLIC_URL}/icons/countdown.png`}
-                            sx={{maxWidth: 700}}
-                        />
-                        <Grid
-                            component="img"
-                            alt="counter-image"
-                            src={`${process.env.PUBLIC_URL}/icons/counter.png`}
-                            sx={{maxWidth: 600}}
-                        />
+                        <Box
+                            component="a"
+                            href="https://vknanavati.github.io/portfolioWebsite/#/countdown"
+                        >
+                            <Grid
+                                component="img"
+                                alt="countdown-image"
+                                src={`${process.env.PUBLIC_URL}/icons/countdown.png`}
+                                sx={{maxWidth: 700}}
+                            />
+                        </Box>
+                        <Box
+                            component="a"
+                            href="https://vknanavati.github.io/portfolioWebsite/#/counter"
+                        >
+                            <Grid
+                                component="img"
+                                alt="counter-image"
+                                src={`${process.env.PUBLIC_URL}/icons/counter.png`}
+                                sx={{maxWidth: 600}}
+                            />
+                        </Box>
                     </Grid>
                 </Grid>
             </Box>
