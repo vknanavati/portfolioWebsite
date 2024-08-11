@@ -21,7 +21,8 @@ export function Home() {
                         display:"flex",
                         overflowX: "auto",
                         whiteSpace: "nowrap",
-                        width: "100%"
+                        width: "100%",
+                        paddingBottom: 20
                     }}
                 >
                     <Grid
@@ -30,9 +31,6 @@ export function Home() {
                         alignItems={"center"}
                     >
                         <Grid
-                            // container
-                            // justifyContent={"center"}
-                            // alignItems={"center"}
                             sx={{
                                 flexWrap: "nowrap",
                                 marginTop: 5,
