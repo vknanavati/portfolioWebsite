@@ -29,7 +29,10 @@ export function Contact() {
                 alignItems={"center"}
                 justifyContent={"center"}
             >
-                <Grid>
+                <Grid
+                    component="a"
+                    href="mailto:vimin.nanavati@gmail.com"
+                >
                     <Box
                         sx={{maxWidth: 70}}
                         component="img"
@@ -63,7 +66,12 @@ export function Contact() {
                 alignItems={"center"}
                 justifyContent={"center"}
             >
-                <Grid>
+                <Grid
+                    component="a"
+                    href="https://github.com/vknanavati"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Box
                         sx={{maxWidth: 80}}
                         component="img"
@@ -99,7 +107,12 @@ export function Contact() {
                 alignItems={"center"}
                 justifyContent={"center"}
             >
-                <Grid>
+                <Grid
+                    component="a"
+                    href="https://www.linkedin.com/in/vimin-nanavati-3510555b/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Box
                         sx={{maxWidth: 80}}
                         component="img"
