@@ -16,8 +16,7 @@ export function Contact() {
         </Typography>
         <Grid
             sx={{
-                backgroundColor: "#e6d7ff",
-
+                backgroundColor: "#E6d7FF",
                 padding: 5,
                 borderRadius: 7,
                 fontSize: 27,
