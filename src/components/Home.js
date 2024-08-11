@@ -26,14 +26,18 @@ export function Home() {
                 >
                     <Grid
                         container
-                        justifyContent={"center"}
+                        justifyContent={"space-around"}
                         alignItems={"center"}
                     >
                         <Grid
-                            container
-                            justifyContent={"center"}
-                            alignItems={"center"}
-                            sx={{flexWrap: "nowrap"}}
+                            // container
+                            // justifyContent={"center"}
+                            // alignItems={"center"}
+                            sx={{
+                                flexWrap: "nowrap",
+                                marginTop: 5,
+                                marginBottom: 10
+                             }}
                         >
                             <Box
                                 component="a"
@@ -43,8 +47,15 @@ export function Home() {
                                     component="img"
                                     alt="to-do-list-image"
                                     src={`${process.env.PUBLIC_URL}/icons/todolist.png`}
-                                    sx={{maxWidth: 800,
-                                        marginRight: 12
+                                    sx={{
+                                        maxWidth: 700,
+                                        marginRight: 30,
+                                        transition: "transform 0.3s ease-in-out",
+                                        "&:hover": {
+                                            transform: "scale(1.10)",
+                                            boxShadow: 5,
+                                            borderRadius: 3
+                                        },
                                     }}
                                 />
                             </Box>
@@ -56,7 +67,15 @@ export function Home() {
                                     component="img"
                                     alt="weather-image"
                                     src={`${process.env.PUBLIC_URL}/icons/weather.png`}
-                                    sx={{maxWidth: 600}}
+                                    sx={{
+                                        maxWidth: 300,
+                                        transition: "transform 0.3s ease-in-out",
+                                        "&:hover": {
+                                            transform: "scale(1.10)",
+                                            boxShadow: 5,
+                                            borderRadius: 3
+                                        },
+                                    }}
                                 />
                             </Box>
                         </Grid>
@@ -69,7 +88,16 @@ export function Home() {
                                 component="img"
                                 alt="countdown-image"
                                 src={`${process.env.PUBLIC_URL}/icons/countdown.png`}
-                                sx={{maxWidth: 700}}
+                                sx={{
+                                    maxWidth: 700,
+                                    marginRight: 10,
+                                    transition: "transform 0.3s ease-in-out",
+                                        "&:hover": {
+                                            transform: "scale(1.10)",
+                                            boxShadow: 5,
+                                            borderRadius: 3
+                                        },
+                                }}
                             />
                         </Box>
                         <Box
@@ -80,7 +108,15 @@ export function Home() {
                                 component="img"
                                 alt="counter-image"
                                 src={`${process.env.PUBLIC_URL}/icons/counter.png`}
-                                sx={{maxWidth: 600}}
+                                sx={{
+                                    maxWidth: 500,
+                                    transition: "transform 0.3s ease-in-out",
+                                        "&:hover": {
+                                            transform: "scale(1.10)",
+                                            boxShadow: 5,
+                                            borderRadius: 3
+                                        },
+                                }}
                             />
                         </Box>
                     </Grid>
