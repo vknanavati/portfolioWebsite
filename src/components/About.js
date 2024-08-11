@@ -3,7 +3,9 @@ import "../App.css"
 
 export function About() {
     return (
-        <Container>
+        <Container
+            sx={{paddingBottom: 20}}
+        >
             <Grid>
                 <Typography
                     variant="h4"
@@ -30,8 +32,8 @@ export function About() {
                             fontSize={25}
                         >
                             My name is Vimin Nanavati and I am a self-taught developer
-                            with experience in HTML, CSS, JavaScript, jQuery, React, and Material UI.
-                            Over the past year I've immersed myself in building projects that
+                            with experience in HTML, CSS, JavaScript, jQuery, React, React Router and Material UI.
+                            Over the past two years I've immersed myself in building projects that
                             have honed my skills and have deepened my understanding of web development.
                         </Typography>
                     </Grid>
@@ -53,7 +55,7 @@ export function About() {
                         padding: 3,
                         borderRadius: 7,
                         fontSize: 25,
-                        boxShadow: 6
+                        boxShadow: 6,
                     }}
                 >
                     <Grid marginBottom={1}>
@@ -81,10 +83,15 @@ export function About() {
                         my Currency Converter app.
                         </Typography>
                     </Grid>
-                    <Grid>
+                    <Grid marginBottom={1}>
                         <Typography variant="body">
                         I further practiced API integration in React by building a weather application
                         that displays live weather data.
+                        </Typography>
+                    </Grid>
+                    <Grid>
+                        <Typography variant="body">
+                        Each project was styled using MaterialUI.
                         </Typography>
                     </Grid>
                 </Grid>
