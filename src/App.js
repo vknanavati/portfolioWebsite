@@ -39,10 +39,22 @@ function App() {
           <Box
             sx={{
               flexShrink: 0,
-              paddingLeft: 1
+              paddingLeft: 1,
+              transition: "transform 0.3s ease-in-out",
+              "&:hover": {
+                transform: "scale(1.10)",
+              },
             }}
           >
-            <Typography variant="h5">
+            <Typography
+              variant="h5"
+              component={Link}
+              to="/contact"
+              sx={{
+                textDecoration: "none",
+                color: "white",
+              }}
+            >
               Vimin Nanavati
             </Typography>
           </Box>
