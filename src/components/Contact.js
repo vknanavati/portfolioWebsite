@@ -17,24 +17,37 @@ export function Contact() {
         <Grid
             sx={{
                 backgroundColor: "#e6d7ff",
-                margin: 8,
-                padding: 4,
+
+                padding: 5,
                 borderRadius: 7,
                 fontSize: 27,
-                boxShadow: 4
+                boxShadow: 4,
+                width: "60%",
+                mx: "auto"
+
             }}
         >
             <Grid
                 container
                 alignItems={"center"}
                 justifyContent={"center"}
+                marginBottom={3}
             >
                 <Grid
                     component="a"
                     href="mailto:vimin.nanavati@gmail.com"
                 >
                     <Box
-                        sx={{maxWidth: 70}}
+                        sx={{
+                            width: 70,
+                            height: 70,
+                            transition: "transform 0.2s ease-in-out",
+                            "&:hover": {
+                                transform: "scale(1.10)",
+                                boxShadow: "-5px -5px 40px #A44CD3",
+                                borderRadius: "50%"
+                            },
+                        }}
                         component="img"
                         alt="email-logo"
                         src={`${process.env.PUBLIC_URL}/icons/email-logo.png`}
@@ -47,7 +60,7 @@ export function Contact() {
                         href="mailto:vimin.nanavati@gmail.com"
                         sx={{
                             fontSize: 25,
-                            marginLeft: 1,
+                            marginLeft: 2,
                             color: 'blue',
                             '&:hover': {
                                 color: 'purple',
@@ -65,6 +78,7 @@ export function Contact() {
                 container
                 alignItems={"center"}
                 justifyContent={"center"}
+                marginBottom={4}
             >
                 <Grid
                     component="a"
@@ -73,7 +87,16 @@ export function Contact() {
                     rel="noopener noreferrer"
                 >
                     <Box
-                        sx={{maxWidth: 80}}
+                        sx={{
+                            width: 70,
+                            height: 70,
+                            transition: "transform 0.2s ease-in-out",
+                            "&:hover": {
+                                transform: "scale(1.10)",
+                                boxShadow: "-5px -5px 40px #A44CD3",
+                                borderRadius: "50%"
+                            },
+                        }}
                         component="img"
                         alt="github-logo"
                         src={`${process.env.PUBLIC_URL}/icons/github-logo.png`}
@@ -87,7 +110,7 @@ export function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         sx={{
-                            marginLeft: 1,
+                            marginLeft: 2,
                             fontSize: 25,
                             color: 'blue',
                             '&:hover': {
@@ -114,7 +137,15 @@ export function Contact() {
                     rel="noopener noreferrer"
                 >
                     <Box
-                        sx={{maxWidth: 80}}
+                        sx={{
+                            width: 70,
+                            transition: "transform 0.2s ease-in-out",
+                            "&:hover": {
+                                transform: "scale(1.10)",
+                                boxShadow: "-5px -5px 40px #A44CD3",
+                                borderRadius: 3
+                            },
+                        }}
                         component="img"
                         alt="linkedin-logo"
                         src={`${process.env.PUBLIC_URL}/icons/linkedin-logo.png`}
@@ -128,7 +159,7 @@ export function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         sx={{
-                            marginLeft: 1,
+                            marginLeft: 2,
                             fontSize: 25,
                             color: 'blue',
                             '&:hover': {
