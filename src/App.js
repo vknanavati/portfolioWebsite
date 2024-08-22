@@ -122,7 +122,7 @@ function App() {
               >
                 Weather
             </Typography>
-            <Typography
+            {/* <Typography
               component={Link}
               to="/currency"
               sx={{
@@ -134,7 +134,7 @@ function App() {
               }}
               >
                 Currency Converter
-            </Typography>
+            </Typography> */}
             <Typography
               component={Link}
               to="/countdown"
