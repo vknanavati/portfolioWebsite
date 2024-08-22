@@ -1,6 +1,7 @@
 import {Link, Routes, Route} from 'react-router-dom';
 import {Home} from './components/Home';
 import {About} from './components/About';
+import {Hostel} from './components/Hostel';
 import {ToDoList} from './components/ToDoList';
 import {Weather} from './components/Weather';
 import {Currency} from './components/Currency';
@@ -98,6 +99,19 @@ function App() {
             </Typography>
             <Typography
               component={Link}
+              to="/hostel"
+              sx={{
+                color: 'white',
+                fontWeight: 600,
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
+              >
+                Hostel Charts
+            </Typography>
+            <Typography
+              component={Link}
               to="/todo"
               sx={{
                 color: 'white',
@@ -180,6 +194,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path="/hostel" element={<Hostel/>}/>
         <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/weather" element={<Weather/>}/>
         <Route path="/currency" element={<Currency/>}/>
