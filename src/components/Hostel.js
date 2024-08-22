@@ -55,6 +55,7 @@ export function Hostel() {
       setLoading(false)
     } catch (error) {
       setError("Error: Could not connect to server.");
+      setLoading(false);
     }
   };
 
