@@ -25,7 +25,7 @@ function App() {
     setError("")
     // send the country name to the Flask backend
     try {
-      const res = await fetch('http://localhost:5000/get-country', {
+      const res = await fetch('https://backend-hostel-app.onrender.com/get-country', {
         method: 'POST',
         //informs the server about the format of data being sent
         headers: {
@@ -68,7 +68,7 @@ function App() {
   }
   const handleSelect = async (selectedCity) => {
     try {
-        await fetch('http://localhost:5000/get-user-city', {
+        await fetch('https://backend-hostel-app.onrender.com/get-user-city', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
