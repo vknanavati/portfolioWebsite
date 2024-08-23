@@ -77,14 +77,14 @@ export function Hostel() {
       });
 
 
-      setGraph1('/static/images/graph1.png');
-      setGraph2('/static/images/graph2.png');
-      setGraph3('/static/images/graph3.png');
-      setGraph4('/static/images/graph4.png');
-      setGraph5('/static/images/graph5.png');
-      setGraph6('/static/images/graph6.png');
-      setGraph7('/static/images/graph7.png');
-      setGraph8('/static/images/graph8.png');
+      setGraph1('/static/graph1.png');
+      setGraph2('/static/graph2.png');
+      setGraph3('/static/graph3.png');
+      setGraph4('/static/graph4.png');
+      setGraph5('/static/graph5.png');
+      setGraph6('/static/graph6.png');
+      setGraph7('/static/graph7.png');
+      setGraph8('/static/graph8.png');
       setSecondLoad(false)
     } catch (error) {
       console.log(error)
