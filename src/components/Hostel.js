@@ -1,7 +1,7 @@
 import { Container, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem, Grid, CircularProgress, Paper} from '@mui/material';
 import { useState } from 'react';
 
-function App() {
+export function Hostel() {
   const [country, setCountry] = useState("");
   const [continent, setContinent] = useState("");
   const [city, setCity] = useState("");
@@ -298,5 +298,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;
