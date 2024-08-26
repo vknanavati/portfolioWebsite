@@ -4,7 +4,7 @@ import {About} from './components/About';
 import {Hostel} from './components/Hostel';
 import {ToDoList} from './components/ToDoList';
 import {Weather} from './components/Weather';
-import {Currency} from './components/Currency';
+import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
@@ -136,7 +136,7 @@ function App() {
               >
                 Weather
             </Typography>
-            {/* <Typography
+            <Typography
               component={Link}
               to="/currency"
               sx={{
@@ -148,7 +148,7 @@ function App() {
               }}
               >
                 Currency Converter
-            </Typography> */}
+            </Typography>
             <Typography
               component={Link}
               to="/countdown"
@@ -197,7 +197,7 @@ function App() {
         <Route path="/hostel" element={<Hostel/>}/>
         <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/weather" element={<Weather/>}/>
-        <Route path="/currency" element={<Currency/>}/>
+        <Route path="/currency" element={<CurrencyTwo/>}/>
         <Route path="/countdown" element={<Countdown/>}/>
         <Route path="/counter" element={<Counter/>}/>
         <Route path="/contact" element={<Contact/>}/>
