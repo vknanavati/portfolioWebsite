@@ -7,7 +7,7 @@ export function CurrencyTwo() {
 
     const [amount, setAmount] = useState("");
     const [from, setFrom] = useState("");
-    const [to, setTo] = useState("")
+    const [to, setTo] = useState("");
 
     console.log("From: ", from)
     console.log("To:", to)
@@ -20,7 +20,14 @@ export function CurrencyTwo() {
         fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${process.env.REACT_APP_CURRENCY_TWO_KEY}&base_currency=${from}&currencies=${to}`, {
         })
         .then(response => response.json())
-        .then(data => console.log("My currency data: ", data))
+        .then(data =>{
+            console.log("My currency data: ", data);
+            const conversionData = data.data;
+            console.log("value: ", Object.values(conversionData)[0])
+            console.log("key: ", Object.keys(conversionData)[0])
+
+
+        })
         .catch(error => console.error('Error:', error))
     }
 
