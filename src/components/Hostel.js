@@ -88,6 +88,8 @@ export function Hostel() {
       setSecondLoad(false)
     } catch (error) {
       console.log(error)
+      setError("Error: Could not connect to server.")
+      setSecondLoad(false)
     }
   }
 
@@ -272,6 +274,16 @@ export function Hostel() {
                 </Select>
               </FormControl>
             </Grid>
+            {error &&
+            <Typography
+              color={"red"}
+              textAlign={"center"}
+              fontSize={25}
+              marginLeft={"-30px"}
+            >
+              {error}
+            </Typography>
+            }
             {secondLoad &&
               <Grid
                 container
