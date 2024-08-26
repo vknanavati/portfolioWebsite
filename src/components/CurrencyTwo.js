@@ -40,10 +40,7 @@ export function CurrencyTwo() {
         const endValue = Number(amount) * Object.values(conversionData)[0]
         setConversion(endValue)
         console.log("conversion: ", endValue)
-
-
     }
-
 
     return (
         <Container>
@@ -54,6 +51,7 @@ export function CurrencyTwo() {
                 alignItems={"center"}
             >
                 <Typography
+                    variant="h4"
                     marginTop={7}
                 >
                     Currency Converter
@@ -61,10 +59,25 @@ export function CurrencyTwo() {
                 <form onSubmit={handleSubmit}>
                     <Grid>
                         <Grid
+                            container
+                            justifyContent={"center"}
                             marginTop={5}
                             marginBottom={5}
                         >
                             <TextField
+                                  sx={{
+                                    width: 160,
+                                    "& .MuiInputBase-root":{
+                                      height: 50
+                                    },
+                                    input: {
+                                      textAlign: "center",
+                                      fontSize: 30
+                                    },
+                                    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                      borderColor: "#00CCCC"
+                                    }
+                                  }}
                                 value={amount}
                                 type="text"
                                 onChange={e=>setAmount(e.target.value)}
@@ -75,12 +88,25 @@ export function CurrencyTwo() {
                             container
                             justifyContent={"center"}
                         >
-                            <Grid margin={2}>
-                                <FormControl>
-                                    <InputLabel>
+                            <Grid margin={3}>
+                                <FormControl sx={{width: 120}}>
+                                    <InputLabel
+                                          sx={{
+                                            '&.MuiInputLabel-shrink':{
+                                              color:"#00CCCC"
+                                            },
+                                            fontSize: 25
+                                          }}
+                                    >
                                         From
                                     </InputLabel>
                                     <Select
+                                        sx={{
+                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
+                                            borderColor: "#00CCCC"
+                                        },
+                                        fontSize: 25
+                                        }}
                                         label="From"
                                         onChange={e=>setFrom(e.target.value)}
                                     >
@@ -90,12 +116,25 @@ export function CurrencyTwo() {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid margin={2}>
-                                <FormControl>
-                                    <InputLabel>
+                            <Grid margin={3}>
+                                <FormControl sx={{width: 120}}>
+                                    <InputLabel
+                                        sx={{
+                                            '&.MuiInputLabel-shrink':{
+                                            color:"#00CCCC"
+                                            },
+                                            fontSize: 25
+                                        }}
+                                    >
                                         To
                                     </InputLabel>
                                     <Select
+                                        sx={{
+                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
+                                            borderColor: "#00CCCC"
+                                        },
+                                        fontSize: 25
+                                        }}
                                         label="To"
                                         onChange={e=>setTo(e.target.value)}
                                     >
@@ -119,7 +158,7 @@ export function CurrencyTwo() {
                         </Button>
                     </Grid>
                 </form>
-                {conversion.toFixed(2)}
+                {conversion && conversion.toFixed(2)}
             </Grid>
         </Container>
     )
