@@ -53,6 +53,7 @@ export function CurrencyTwo() {
                 <Typography
                     variant="h4"
                     marginTop={7}
+                    color={"#00CCCC"}
                 >
                     Currency Converter
                 </Typography>
@@ -151,14 +152,23 @@ export function CurrencyTwo() {
                         justifyContent={"center"}
                     >
                         <Button
+                            sx={{
+                            backgroundColor: "#00CCCC",
+                            "&:hover": {
+                                backgroundColor: "#00CCCC",
+                            },
+                            fontWeight: 700,
+                            fontSize: 25
+                            }}
                             variant="contained"
                             type="submit"
+
                         >
                             Submit
                         </Button>
                     </Grid>
                 </form>
-                {conversion && conversion.toFixed(2)}
+                {conversion && <Typography marginTop={5} fontSize={30}>{conversion.toFixed(2)} {to}</Typography>}
             </Grid>
         </Container>
     )
