@@ -8,6 +8,7 @@ export function CurrencyTwo() {
     const [amount, setAmount] = useState("");
     const [from, setFrom] = useState("");
     const [to, setTo] = useState("");
+    const [conversion, setConversion] = useState("")
 
     console.log("From: ", from)
     console.log("To:", to)
@@ -23,12 +24,24 @@ export function CurrencyTwo() {
         .then(data =>{
             console.log("My currency data: ", data);
             const conversionData = data.data;
-            console.log("value: ", Object.values(conversionData)[0])
-            console.log("key: ", Object.keys(conversionData)[0])
-
-
+            calculateAmount(conversionData)
         })
         .catch(error => console.error('Error:', error))
+    }
+
+    const calculateAmount = (conversionData) => {
+        console.log("value: ", Object.values(conversionData)[0])
+        console.log(typeof Object.values(conversionData)[0])
+        console.log("key: ", Object.keys(conversionData)[0])
+        console.log(typeof Object.keys(conversionData)[0])
+        console.log("amount: ", Number(amount))
+        console.log(typeof Number(amount))
+
+        const endValue = Number(amount) * Object.values(conversionData)[0]
+        setConversion(endValue)
+        console.log("conversion: ", endValue)
+
+
     }
 
 
@@ -106,6 +119,7 @@ export function CurrencyTwo() {
                         </Button>
                     </Grid>
                 </form>
+                {conversion.toFixed(2)}
             </Grid>
         </Container>
     )
