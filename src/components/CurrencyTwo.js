@@ -1,19 +1,30 @@
-import {TextField, Grid, Container, Typography, FormControl, InputLabel, Select, MenuItem} from '@mui/material';
+import {useState} from 'react';
+import {TextField, Grid, Container, Typography, FormControl, InputLabel, Select, MenuItem, Button} from '@mui/material';
+
 
 export function CurrencyTwo() {
+    console.log(process.env)
 
-    const apikey = 'fca_live_3ewfSqf1Y12DSCnmjCbDsMNMOkCR46iDztjF1E1c'
-    const base_currency = 'USD'
-    const currency = 'CAD'
+    const [amount, setAmount] = useState("");
+    const [from, setFrom] = useState("");
+    const [to, setTo] = useState("")
 
-    fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${apikey}&base_currency=${base_currency}&currencies=${currency}`, {
-        headers: {
-            "apikey": "fca_live_3ewfSqf1Y12DSCnmjCbDsMNMOkCR46iDztjF1E1c"
-        }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error))
+    console.log("From: ", from)
+    console.log("To:", to)
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        console.log("Searching currency exchange: ", to, from, process.env.REACT_APP_CURRENCY_TWO_KEY)
+
+        fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${process.env.REACT_APP_CURRENCY_TWO_KEY}&base_currency=${from}&currencies=${to}`, {
+        })
+        .then(response => response.json())
+        .then(data => console.log("My currency data: ", data))
+        .catch(error => console.error('Error:', error))
+    }
+
+
     return (
         <Container>
             <Grid
@@ -27,26 +38,31 @@ export function CurrencyTwo() {
                 >
                     Currency Converter
                 </Typography>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <Grid>
                         <Grid
                             marginTop={5}
                             marginBottom={5}
                         >
-                            <TextField>
-                            </TextField>
+                            <TextField
+                                value={amount}
+                                type="text"
+                                onChange={e=>setAmount(e.target.value)}
+
+                            />
                         </Grid>
                         <Grid
                             container
                             justifyContent={"center"}
                         >
-                            <Grid>
+                            <Grid margin={2}>
                                 <FormControl>
                                     <InputLabel>
                                         From
                                     </InputLabel>
                                     <Select
                                         label="From"
+                                        onChange={e=>setFrom(e.target.value)}
                                     >
                                         {currency_codes.map((currency_code, i)=> {
                                             return <MenuItem key={i} value={currency_code}>{currency_code}</MenuItem>
@@ -54,13 +70,14 @@ export function CurrencyTwo() {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid>
+                            <Grid margin={2}>
                                 <FormControl>
                                     <InputLabel>
                                         To
                                     </InputLabel>
                                     <Select
                                         label="To"
+                                        onChange={e=>setTo(e.target.value)}
                                     >
                                         {currency_codes.map((currency_code, i) =>{
                                             return <MenuItem key={i} value={currency_code}>{currency_code}</MenuItem>
@@ -69,6 +86,17 @@ export function CurrencyTwo() {
                                 </FormControl>
                             </Grid>
                         </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        justifyContent={"center"}
+                    >
+                        <Button
+                            variant="contained"
+                            type="submit"
+                        >
+                            Submit
+                        </Button>
                     </Grid>
                 </form>
             </Grid>
