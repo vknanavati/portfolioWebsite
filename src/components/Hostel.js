@@ -25,7 +25,7 @@ export function Hostel() {
     setError("")
     // send the country name to the Flask backend
     try {
-      const res = await fetch('https://hostel-app-58b99f26611f.herokuapp.com/get-country', {
+      const res = await fetch('https://hostel-app-31f2f9652ccd.herokuapp.com/get-country', {
         method: 'POST',
         //informs the server about the format of data being sent
         headers: {
@@ -68,7 +68,7 @@ export function Hostel() {
   }
   const handleSelect = async (selectedCity) => {
     try {
-        await fetch('https://hostel-app-58b99f26611f.herokuapp.com/get-user-city', {
+        await fetch('https://hostel-app-31f2f9652ccd.herokuapp.com/get-user-city', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
