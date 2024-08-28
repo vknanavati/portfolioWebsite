@@ -76,15 +76,15 @@ export function Hostel() {
         body: JSON.stringify({ country, continent, city: selectedCity }),
       });
 
-
-      setGraph1('/static/graph1.png');
-      setGraph2('/static/graph2.png');
-      setGraph3('/static/graph3.png');
-      setGraph4('/static/graph4.png');
-      setGraph5('/static/graph5.png');
-      setGraph6('/static/graph6.png');
-      setGraph7('/static/graph7.png');
-      setGraph8('/static/graph8.png');
+      const baseURL = 'https://hostel-app-31f2f9652ccd.herokuapp.com';
+      setGraph1(`${baseURL}/static/graph1.png`);
+      setGraph2(`${baseURL}/static/graph2.png`);
+      setGraph3(`${baseURL}/static/graph3.png`);
+      setGraph4(`${baseURL}/static/graph4.png`);
+      setGraph5(`${baseURL}/static/graph5.png`);
+      setGraph6(`${baseURL}/static/graph6.png`);
+      setGraph7(`${baseURL}/static/graph7.png`);
+      setGraph8(`${baseURL}/static/graph8.png`);
       setSecondLoad(false)
     } catch (error) {
       console.log(error)
