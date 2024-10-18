@@ -1,6 +1,10 @@
 import {Link, Routes, Route} from 'react-router-dom';
 import {Home} from './components/Home';
 import {About} from './components/About';
+import {RecipeApp} from './components/recipe/RecipeApp';
+import {Favorites} from './components/recipe/Favorites';
+import {AboutRecipe} from './components/recipe/AboutRecipe';
+import {HomeRecipe} from './components/recipe/HomeRecipe';
 import {Hostel} from './components/Hostel';
 import {ToDoList} from './components/ToDoList';
 import {Weather} from './components/Weather';
@@ -99,6 +103,19 @@ function App() {
             </Typography>
             <Typography
               component={Link}
+              to="/recipe/homeRecipe"
+              sx={{
+                color: 'white',
+                fontWeight: 600,
+                textDecoration: 'none',
+                '&:hover': { color: '#FFEB3B' },
+                '&:active': { color: '#23FAFA' }
+              }}
+              >
+                Recipe Cards
+            </Typography>
+            <Typography
+              component={Link}
               to="/hostel"
               sx={{
                 color: 'white',
@@ -194,6 +211,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
+
+        <Route path="/recipe" element={<RecipeApp/>}>
+          <Route path="aboutRecipe" element={<AboutRecipe/>}/>
+          <Route path="homeRecipe" element={<HomeRecipe/>}/>
+          <Route path="favorites" element={<Favorites/>}/>
+        </Route>
+
+
         <Route path="/hostel" element={<Hostel/>}/>
         <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/weather" element={<Weather/>}/>
