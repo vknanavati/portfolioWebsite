@@ -9,7 +9,7 @@ export function Favorites ({favorites, addFavorite}) {
                 <Grid>
                     <Typography
                         variant="h4"
-                        sx={{marginTop: 5, marginBottom:2}}
+                        sx={{marginTop: 11, marginBottom:2}}
                     >
                         Favorite Recipes
                     </Typography>
