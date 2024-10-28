@@ -1,15 +1,14 @@
-import {Grid, Container, Typography} from '@mui/material';
+import {Container, Typography} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import "../App.css"
 
 export function About() {
     return (
-        <Container
-            sx={{paddingBottom: 20}}
-        >
+        <Container sx={{paddingBottom: 20}}>
             <Grid>
                 <Typography
                     variant="h4"
-                    marginTop={8}
+                    marginTop={15}
                     marginBottom={3}
                     textAlign={"center"}
                     color={"#666666"}
