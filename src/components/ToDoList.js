@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
-import {ListItemText, List, ListItem, Paper, Container, Typography, Grid, Button, TextField, Box} from '@mui/material'
+import {ListItemText, List, ListItem, Paper, Container, Typography, Button, TextField, Box} from '@mui/material'
+import Grid from '@mui/material/Grid2';
 import "../App.css"
 
 
@@ -53,7 +54,7 @@ export function ToDoList() {
           sx=
           {{
             paddingBottom: 10,
-            marginTop: 10,
+            marginTop: 15,
             marginBottom: 10
           }}
         >
