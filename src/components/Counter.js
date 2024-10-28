@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import {Container, Grid, Typography, Button} from '@mui/material';
+import {Container, Typography, Button} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 export function Counter() {
     const [count, setCount] = useState(0);
@@ -22,16 +23,16 @@ export function Counter() {
             >
                 <Typography
                 variant="h3"
-                marginTop={10}
+                marginTop={15}
                 color={"#FE019A"}
                 >
                 Counter App
                 </Typography>
                 <Grid
-                container
-                justifyContent={"center"}
-                alignItems={"center"}
-                marginTop={6}
+                    container
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    marginTop={6}
                 >
                 <Grid>
                     <Button
@@ -54,30 +55,29 @@ export function Counter() {
                 </Grid>
                 <Grid>
                     <Typography
-                    variant="body2"
-                    fontSize={70}
-                    fontWeight={200}
-                    color={"#3C3E3C"}
-
+                        variant="body2"
+                        fontSize={70}
+                        fontWeight={200}
+                        color={"#3C3E3C"}
                     >
-                    {count}
+                        {count}
                     </Typography>
                 </Grid>
                 <Grid>
                     <Button
-                    sx={{
-                        marginLeft: 3,
-                        fontSize: 30,
-                        padding: 0,
-                        border: "2px #FE019A solid",
-                        color: "#FE019A",
-                        "&:hover": {
-                        border: "2px #FE019A solid",
-                        },
-                        fontWeight: 700
-                    }}
-                    variant="outlined"
-                    onClick={handleAdd}
+                        sx={{
+                            marginLeft: 3,
+                            fontSize: 30,
+                            padding: 0,
+                            border: "2px #FE019A solid",
+                            color: "#FE019A",
+                            "&:hover": {
+                            border: "2px #FE019A solid",
+                            },
+                            fontWeight: 700
+                        }}
+                        variant="outlined"
+                        onClick={handleAdd}
                     >
                     +
                     </Button>
@@ -85,6 +85,5 @@ export function Counter() {
                 </Grid>
             </Grid>
         </Container>
-
     )
 }
