@@ -36,7 +36,7 @@ export function AboutRecipe() {
             <Grid
                 component="img"
                 alt="recipe-card"
-                src={"/icons/recipeCard.png"}
+                src={`${process.env.PUBLIC_URL}/icons/recipeCard.png`}
                 sx={{maxWidth: 370}}
             />
 
@@ -55,7 +55,7 @@ export function AboutRecipe() {
             <Grid
                 component="img"
                 alt="make-recipe-page"
-                src={"/icons/makeRecipePage.png"}
+                src={`${process.env.PUBLIC_URL}/icons/makeRecipePage.png`}
                 sx={{maxWidth: 1000}}
             />
         </Grid>
