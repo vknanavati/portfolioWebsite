@@ -46,7 +46,7 @@ export function Home() {
                                     alt="recipe-search-image"
                                     src={`${process.env.PUBLIC_URL}/icons/recipeSearch.png`}
                                     sx={{
-                                        maxWidth: 800,
+                                        maxWidth: 750,
                                         transition: "transform 0.3s ease-in-out",
                                         "&:hover": {
                                             transform: "scale(1.10)",
