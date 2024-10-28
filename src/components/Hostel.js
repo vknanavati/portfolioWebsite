@@ -1,5 +1,6 @@
-import { Container, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem, Grid, CircularProgress, Paper} from '@mui/material';
 import { useState } from 'react';
+import { Container, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem, CircularProgress, Paper} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 export function Hostel() {
   const [country, setCountry] = useState("");
@@ -109,7 +110,7 @@ export function Hostel() {
         <Typography
           variant="h4"
           sx={{
-            marginTop:7,
+            marginTop:15,
             marginBottom: 5,
             color: "#EF6AE8",
             fontWeight: 700,
