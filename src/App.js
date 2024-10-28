@@ -162,7 +162,7 @@ function App() {
   return (
 
     <Container maxWidth={"false"} disableGutters>
-      <AppBar position="static" sx={{ backgroundColor: '#A44CD3' }}>
+      <AppBar position="fixed" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar
           sx={{
             display: 'flex',
