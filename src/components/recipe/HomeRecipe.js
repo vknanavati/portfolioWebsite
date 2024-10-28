@@ -23,7 +23,7 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
           <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
             <Typography
               variant="h3"
-              sx={{marginTop: 5, marginBottom: 2}}
+              sx={{marginTop: 11, marginBottom: 2}}
             >
               Recipe Search
             </Typography>
