@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Container, Grid, Typography, TextField, Button, Box } from '@mui/material';
+import { Container, Typography, TextField, Button, Box } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 console.log(process.env)
 
@@ -34,7 +35,7 @@ export function Weather() {
         >
         <Typography
           variant="h4"
-          sx={{marginTop: 7, marginBottom: 4, color: "#953ef7"}}
+          sx={{marginTop: 15, marginBottom: 4, color: "#953ef7"}}
         >
           Current Weather
         </Typography>
