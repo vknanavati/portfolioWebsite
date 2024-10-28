@@ -2,8 +2,9 @@ import {Container, Typography, List, ListItem} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 export function AboutRecipe() {
+
     return (
-    <Container sx={{ paddingTop: '64px' }}>
+    <Container sx={{ paddingTop: '128px' }}>
         <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
 
             <Grid item sx={{marginTop: 4, marginBottom: 3}}>
