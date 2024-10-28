@@ -6,6 +6,7 @@ import {Container, Drawer, List, ListItemButton, ListItem, ListItemText} from '@
 
 export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe, setFilteredRecipe, notes, setNotesList, setNotes, notesList, addMakeRecipe}) {
 
+
     useEffect(() => {
         console.log("filteredRecipe updated: ", JSON.stringify(filteredRecipe));
         console.log("filteredRecipe length: ", filteredRecipe.length)
