@@ -19,7 +19,6 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
 
     return (
         <Container maxWidth={"xl"} sx={{paddingTop: '64px'}}>
-
           <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
             <Typography
               variant="h3"
