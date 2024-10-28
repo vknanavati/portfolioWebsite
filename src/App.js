@@ -15,7 +15,7 @@ import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
 import {AppBar, Toolbar, Box, Container, Typography} from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function App() {
 
@@ -341,7 +341,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
 
-        <Route path="/recipe" element={<RecipeApp/>}>
+        <Route path="/recipe" element={<RecipeApp favorites={favorites} makeRecipe={makeRecipe}/>}>
           <Route path="aboutRecipe" element={<AboutRecipe/>}/>
           <Route
             path="homeRecipe"
