@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { AppBar,Container,Toolbar, Typography, Box} from '@mui/material';
-import {Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route, Link, Outlet} from 'react-router-dom';
 import {Favorites} from './Favorites'
 import {HomeRecipe} from './HomeRecipe'
 import {MakeRecipe} from './MakeRecipe'
-import {AboutRecipe} from './AboutRecipe'
+// import {AboutRecipe} from './AboutRecipe'
 // import './App.css';
 
 export function RecipeApp() {
@@ -136,7 +136,8 @@ export function RecipeApp() {
 
   return (
     <Container maxWidth={"false"} disableGutters>
-      <AppBar position="fixed" sx={{backgroundColor: '#3A5B26'}}>
+      <AppBar position="fixed" sx={{backgroundColor: '#3A5B26', marginTop: "64px",
+      }}>
         <Toolbar>
           <Box sx={{
             display: "flex",
@@ -153,22 +154,23 @@ export function RecipeApp() {
             <Typography variant="h6" component={Link} to="/homeRecipe" color="inherit" sx={{ textDecoration: 'none' }}>
               Home
             </Typography>
-            <Typography variant="h6" component={Link} to="/aboutRecipe" color="inherit" sx={{ textDecoration: 'none' }}>
+            <Typography variant="h6" component={Link} to="/recipe/aboutRecipe" color="inherit" sx={{ textDecoration: 'none' }}>
               About
             </Typography>
-            <Typography variant="h6" component={Link} to="/favorites" color="inherit" sx={{ textDecoration: 'none' }}>
+            <Typography variant="h6" component={Link} to="/recipe/favorites" color="inherit" sx={{ textDecoration: 'none' }}>
               Favorites ({favorites !== null && (favorites.length)})
             </Typography>
-            <Typography variant="h6" component={Link} to="/make" color="inherit" sx={{ textDecoration: 'none' }}>
+            <Typography variant="h6" component={Link} to="/recipe/make" color="inherit" sx={{ textDecoration: 'none' }}>
               Recipes ({makeRecipe.length !== null && (makeRecipe.length) })
               {console.log("****MAKE RECIPE NAV LINK: ", makeRecipe.length > 0 && (makeRecipe.length))}
             </Typography>
           </Box>
         </Toolbar>
       </AppBar>
+      <Outlet/>
     <Routes>
       <Route
-        path="/homeRecipe"
+        path="/recipe/homeRecipe"
         element={
           <HomeRecipe
             addFavorite={addFavorite}
@@ -184,26 +186,7 @@ export function RecipeApp() {
           />
         }
         />
-      <Route path="/aboutRecipe" element={<AboutRecipe/>}/>
-      <Route path="/favorites" element={<Favorites favorites={favorites} addFavorite={addFavorite}/>}/>
-      <Route
-        path="/make"
-        element={
-          <MakeRecipe
-            makeRecipe={makeRecipe}
-            addGrocery={addGrocery}
-            groceryList={groceryList}
-            filteredRecipe={filteredRecipe}
-            setFilteredRecipe={setFilteredRecipe}
-            setNotes={setNotes}
-            notes={notes}
-            notesList={notesList}
-            setNotesList={setNotesList}
-            addMakeRecipe={addMakeRecipe}
-          />
-        }
-      />
-    </Routes>
+       </Routes>
     </Container>
   );
 }
