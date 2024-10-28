@@ -14,6 +14,7 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
 
     }, [filteredRecipe, notesList]);
 
+
     //triggered when you click on a recipe in the side drawer
     const selectedRecipe = (choice) => {
         const filtered = makeRecipe.filter(item => item.label.includes(choice));
@@ -56,9 +57,8 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
      })
     }
 
-
     return (
-        <Container sx={{ paddingTop: '64px' }}>
+        <Container sx={{ paddingTop: '128px' }}>
             <Drawer
                 variant="permanent"
                 anchor="left"
