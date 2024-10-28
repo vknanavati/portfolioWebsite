@@ -1,4 +1,5 @@
-import {Grid, Container, Typography, Box} from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import {Container, Typography, Box} from '@mui/material';
 
 export function Home() {
     return (
@@ -6,7 +7,7 @@ export function Home() {
             <Grid>
                 <Typography
                     variant="h4"
-                    marginTop={10}
+                    marginTop={15}
                     marginBottom={10}
                     textAlign={"center"}
                     color={"#666666"}
@@ -27,9 +28,35 @@ export function Home() {
                 >
                     <Grid
                         container
-                        justifyContent={"space-around"}
+                        justifyContent={"space-evenly"}
                         alignItems={"center"}
                     >
+                        <Grid
+                            sx={{
+                                flexWrap: "nowrap",
+                                marginTop: 5,
+                                marginBottom: 10
+                             }}>
+                            <Box
+                                component="a"
+                                href="https://vknanavati.github.io/portfolioWebsite/#/recipe/homeRecipe"
+                            >
+                                <Grid
+                                    component="img"
+                                    alt="recipe-search-image"
+                                    src={`${process.env.PUBLIC_URL}/icons/recipeSearch.png`}
+                                    sx={{
+                                        maxWidth: 800,
+                                        transition: "transform 0.3s ease-in-out",
+                                        "&:hover": {
+                                            transform: "scale(1.10)",
+                                            boxShadow: 5,
+                                            borderRadius: 3
+                                        },
+                                    }}
+                                />
+                            </Box>
+                        </Grid>
                         <Grid
                             sx={{
                                 flexWrap: "nowrap",
@@ -47,7 +74,7 @@ export function Home() {
                                     src={`${process.env.PUBLIC_URL}/icons/todolist.png`}
                                     sx={{
                                         maxWidth: 700,
-                                        marginRight: 30,
+                                        marginRight: 12,
                                         transition: "transform 0.3s ease-in-out",
                                         "&:hover": {
                                             transform: "scale(1.10)",
