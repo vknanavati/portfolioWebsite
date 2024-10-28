@@ -1,13 +1,13 @@
 import {Button,Container, Typography, Alert, AlertTitle} from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { RecipeCard } from '../RecipeCard';
+import { RecipeCard } from './RecipeCard';
 
 export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, alertFavorite, setAlertFavorite, alertRemove, favorites, alertRecipe}) {
     console.log(process.env)
 
     const handleClick = (cusineType) => {
-      console.log("Searching city: ", cusineType, process.env.REACT_APP_API_KEY, process.env.REACT_APP_ID)
-      fetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_API_KEY}&cuisineType=${cusineType}`, {
+      console.log("Searching city: ", cusineType, process.env.REACT_APP_RECIPE_KEY, process.env.REACT_APP_ID)
+      fetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&cuisineType=${cusineType}`, {
       })
       .then(response => response.json())
       .then(data =>{
