@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
-import {Grid, Container, Typography, Button, TextField} from '@mui/material';
+import {Container, Typography, Button, TextField} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 export function Countdown() {
     const [input, setInput] = useState("");
@@ -56,28 +57,27 @@ export function Countdown() {
         setSeconds(Math.floor((timeMS/1000)%60));
     }
     return(
-
         <Container>
             <Grid
-            container
-            justifyContent={"center"}
-            alignItems={"center"}
-            direction={"column"}
+                container
+                justifyContent={"center"}
+                alignItems={"center"}
+                direction={"column"}
             >
             <Typography
                 variant="h4"
                 color="textSecondary"
                 align="center"
-                marginTop={7}
+                marginTop={15}
                 marginBottom={3}
             >
                 Countdown Clock
             </Typography>
             <form>
                 <Grid
-                container
-                alignItems={"center"}
-                justifyContent={"center"}
+                    container
+                    alignItems={"center"}
+                    justifyContent={"center"}
                 >
                     <Grid item>
                         <TextField
@@ -121,6 +121,5 @@ export function Countdown() {
           </form>
         </Grid>
        </Container>
-
     )
 }
