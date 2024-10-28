@@ -1,5 +1,5 @@
-import {Typography, Button, Grid } from '@mui/material';
-// import Grid from '@mui/material/Grid2';
+import {Typography, Button } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import IconButton from '@mui/joy/IconButton';
 import { FavoriteOutlined } from '@mui/icons-material';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
@@ -42,7 +42,7 @@ export function RecipeCard ({recipe, addFavorite, addMakeRecipe, favorites}) {
               Make Recipe
             </Button>
           </Grid>
-          <Typography variant="h6">{recipe.label}</Typography>
+          <Typography variant="h6" >{recipe.label}</Typography>
           <img alt="food-photo" src={recipe.image}/>
 
           <Typography sx={{wordWrap: "break-word", marginTop: 2}}>
