@@ -34,12 +34,6 @@ function App() {
   //   }
   // });
 
-  const [favorites, setFavorites] = useState(()=> {
-    return JSON.parse(localStorage.getItem("favorites")) || []
-  });
-  const [makeRecipe, setMakeRecipe] = useState(()=>{
-    return JSON.parse(localStorage.getItem("make recipe")) || []
-  });
   const [foodData, setFoodData] = useState("");
   const [groceryList, setGroceryList] = useState({});
   const [filteredRecipe, setFilteredRecipe] = useState([]);
@@ -63,6 +57,13 @@ function App() {
     const localNotes = localStorage.getItem("notes");
     setNotesList( localNotes ? JSON.parse(localNotes) : {})
   }, [])
+
+  const [favorites, setFavorites] = useState(()=> {
+    return JSON.parse(localStorage.getItem("favorites")) || []
+  });
+  const [makeRecipe, setMakeRecipe] = useState(()=>{
+    return JSON.parse(localStorage.getItem("make recipe")) || []
+  });
 
   //this useEffect is triggered only when favorites array is not empty
   useEffect(() => {
@@ -360,7 +361,13 @@ function App() {
               />
             }
           />
-          <Route path="favorites" element={<Favorites favorites={favorites} addFavorite={addFavorite}/>}/>
+          <Route path="favorites" element={
+            <Favorites
+              favorites={favorites}
+              addFavorite={addFavorite}
+              addMakeRecipe={addMakeRecipe}/>
+              }
+            />
           <Route path="make" element={
             <MakeRecipe
               makeRecipe={makeRecipe}
