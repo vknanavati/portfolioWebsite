@@ -17,6 +17,19 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .catch(error => console.error('Error:', error))
     }
 
+    const handleNext = () => {
+      console.log("next link", foodData._links.next.href)
+      fetch(foodData._links.next.href, {
+      })
+      .then(response => response.json())
+      .then(data =>{
+          console.log("My recipe data: ", data);
+          setFoodData(data)
+      })
+      .catch(error => console.error('Error:', error))
+
+    }
+
     return (
         <Container maxWidth={"xl"} sx={{paddingTop: '64px'}}>
           <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
@@ -116,6 +129,9 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
                 })}
             </Grid>
         )}
+        <Grid container justifyContent={"center"}>
+          <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext()}>Next</Button>
+        </Grid>
       </Container>
     )
-}
+  }
