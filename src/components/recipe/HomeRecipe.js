@@ -17,17 +17,16 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .catch(error => console.error('Error:', error))
     }
 
-    const handleNext = () => {
+    const handleNext = (foodData) => {
       console.log("next link", foodData._links.next.href)
       fetch(foodData._links.next.href, {
       })
       .then(response => response.json())
       .then(data =>{
           console.log("My recipe data: ", data);
-          setFoodData(data)
+          setFoodData([...foodData, data])
       })
       .catch(error => console.error('Error:', error))
-
     }
 
     return (
@@ -114,23 +113,23 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
             </Alert>
           )}
         {foodData && (
-            <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
-                {foodData.hits.map((hit, index) => {
-                    // console.log("HIT from foodData.hits:", hit);
-                    return (
-                    <RecipeCard
-                        key={index}
-                        recipe={hit.recipe}
-                        addFavorite={addFavorite}
-                        addMakeRecipe={addMakeRecipe}
-                        favorites={favorites}
-                    />
-                    )
-                })}
-            </Grid>
+          <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
+              {foodData.hits.map((hit, index) => {
+                  // console.log("HIT from foodData.hits:", hit);
+                return (
+                  <RecipeCard
+                    key={index}
+                    recipe={hit.recipe}
+                    addFavorite={addFavorite}
+                    addMakeRecipe={addMakeRecipe}
+                    favorites={favorites}
+                  />
+                )
+              })}
+          </Grid>
         )}
         <Grid container justifyContent={"center"}>
-          <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext()}>Next</Button>
+          <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Next</Button>
         </Grid>
       </Container>
     )
