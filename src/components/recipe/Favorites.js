@@ -14,18 +14,17 @@ export function Favorites ({favorites, addFavorite}) {
                         Favorite Recipes
                     </Typography>
                 </Grid>
-                {favorites.length > 0 &&(
-                <Grid container justifyContent={"center"}>
-                    {favorites.map((recipe,index)=>(
-                        <Grid key={index}>
+                {favorites.length > 0 && (
+                    <Grid container justifyContent={"center"}>
+                        {favorites.map((recipe,index) => (
                             <RecipeCard
+                                key={index}
                                 recipe={recipe}
                                 addFavorite={addFavorite}
                                 favorites={favorites}
                             />
-                        </Grid>
-                    ))}
-                </Grid>
+                        ))}
+                    </Grid>
                 )}
             </Grid>
         </Container>
