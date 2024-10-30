@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import {Button,Container, Typography, Alert, AlertTitle} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { RecipeCard } from './RecipeCard';
 
 export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, alertFavorite, setAlertFavorite, alertRemove, favorites, alertRecipe}) {
     console.log(process.env)
+
+    const [currentData, setCurrentData] = useState([]);
+    const [backButton, setBackButton] = useState(false);
 
     const handleClick = (cusineType) => {
       console.log("Searching city: ", cusineType, process.env.REACT_APP_RECIPE_KEY, process.env.REACT_APP_ID)
@@ -12,13 +16,15 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .then(response => response.json())
       .then(data => {
           console.log("My recipe data: ", data);
-          setFoodData(data)
+          setFoodData(data);
+          setCurrentData(data);
       })
       .catch(error => console.error('Error:', error))
     }
 
     const handleNext = (foodData) => {
-      console.log("next link", foodData._links.next.href)
+      console.log("next link", foodData._links.next.href);
+
       fetch(foodData._links.next.href, {
       })
       .then(response => response.json())
@@ -26,9 +32,10 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
           console.log("My recipe data: ", data);
           setFoodData(data)
       })
-      .catch(error => console.error('Error:', error))
-    }
+      .catch(error => console.error('Error:', error));
 
+      setBackButton(true);
+    }
     return (
         <Container maxWidth={"xl"} sx={{paddingTop: '64px'}}>
           <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
@@ -128,6 +135,11 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
                   )
                 })}
             </Grid>
+            {backButton && (
+              <Grid container justifyContent={"center"}>
+                <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Back</Button>
+              </Grid>
+            )}
             <Grid container justifyContent={"center"}>
               <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Next</Button>
             </Grid>
