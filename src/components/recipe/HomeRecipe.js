@@ -10,7 +10,7 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       fetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&cuisineType=${cusineType}`, {
       })
       .then(response => response.json())
-      .then(data =>{
+      .then(data => {
           console.log("My recipe data: ", data);
           setFoodData(data)
       })
@@ -24,7 +24,7 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .then(response => response.json())
       .then(data =>{
           console.log("My recipe data: ", data);
-          setFoodData([...foodData, data])
+          setFoodData(data)
       })
       .catch(error => console.error('Error:', error))
     }
@@ -113,24 +113,26 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
             </Alert>
           )}
         {foodData && (
-          <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
-              {foodData.hits.map((hit, index) => {
-                  // console.log("HIT from foodData.hits:", hit);
-                return (
-                  <RecipeCard
-                    key={index}
-                    recipe={hit.recipe}
-                    addFavorite={addFavorite}
-                    addMakeRecipe={addMakeRecipe}
-                    favorites={favorites}
-                  />
-                )
-              })}
+          <Grid>
+            <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
+                {foodData.hits.map((hit, index) => {
+                    // console.log("HIT from foodData.hits:", hit);
+                  return (
+                    <RecipeCard
+                      key={index}
+                      recipe={hit.recipe}
+                      addFavorite={addFavorite}
+                      addMakeRecipe={addMakeRecipe}
+                      favorites={favorites}
+                    />
+                  )
+                })}
+            </Grid>
+            <Grid container justifyContent={"center"}>
+              <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Next</Button>
+            </Grid>
           </Grid>
         )}
-        <Grid container justifyContent={"center"}>
-          <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Next</Button>
-        </Grid>
       </Container>
     )
   }
