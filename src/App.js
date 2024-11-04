@@ -34,7 +34,7 @@ function App() {
   //   }
   // });
 
-  const [foodData, setFoodData] = useState("");
+  const [foodData, setFoodData] = useState([]);
   const [groceryList, setGroceryList] = useState({});
   const [filteredRecipe, setFilteredRecipe] = useState([]);
   const [alertFavorite, setAlertFavorite] = useState(false);
@@ -87,6 +87,7 @@ function App() {
     console.log("groceryList updated: ", JSON.stringify(groceryList));
     console.log("makeRecipe updated: ", JSON.stringify(makeRecipe));
     console.log("favorites updated: ", JSON.stringify(favorites));
+    console.log("Favorites LENGTH: ", favorites.length)
   }, [groceryList, makeRecipe, favorites]);
 
     //add and remove favorite recipe card
@@ -384,7 +385,6 @@ function App() {
           }/>
         </Route>
 
-
         <Route path="/hostel" element={<Hostel/>}/>
         <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/weather" element={<Weather/>}/>
@@ -394,7 +394,6 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </Container>
-
   );
 }
 
