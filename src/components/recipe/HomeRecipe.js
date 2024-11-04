@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Button,Container, Typography, Alert, AlertTitle} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { RecipeCard } from './RecipeCard';
@@ -6,8 +6,11 @@ import { RecipeCard } from './RecipeCard';
 export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, alertFavorite, setAlertFavorite, alertRemove, favorites, alertRecipe}) {
     console.log(process.env)
 
-    const [currentData, setCurrentData] = useState([]);
-    const [backButton, setBackButton] = useState(false);
+    const [nextData, setNextData] = useState([]);
+
+    useEffect(()=>{
+      console.log("nextData: ", nextData);
+    }, [nextData])
 
     const handleClick = (cusineType) => {
       console.log("Searching city: ", cusineType, process.env.REACT_APP_RECIPE_KEY, process.env.REACT_APP_ID)
@@ -16,25 +19,24 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .then(response => response.json())
       .then(data => {
           console.log("My recipe data: ", data);
-          setFoodData(data);
-          setCurrentData(data);
+          // console.log("foodData.hits: ", data.hits);
+          setFoodData(data.hits);
+          setNextData(data._links.next.href)
       })
       .catch(error => console.error('Error:', error))
     }
 
-    const handleNext = (foodData) => {
-      console.log("next link", foodData._links.next.href);
+    const handleNext = (nextData) => {
+      console.log("next link", nextData);
 
-      fetch(foodData._links.next.href, {
+      fetch(nextData, {
       })
       .then(response => response.json())
       .then(data =>{
           console.log("My recipe data: ", data);
-          setFoodData(data)
+          setFoodData(data.hits)
       })
       .catch(error => console.error('Error:', error));
-
-      setBackButton(true);
     }
     return (
         <Container maxWidth={"xl"} sx={{paddingTop: '64px'}}>
@@ -119,10 +121,10 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
               Removed from Favorites
             </Alert>
           )}
-        {foodData && (
+        {foodData !==null && (
           <Grid>
             <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
-                {foodData.hits.map((hit, index) => {
+                {foodData.map((hit, index) => {
                     // console.log("HIT from foodData.hits:", hit);
                   return (
                     <RecipeCard
@@ -135,15 +137,12 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
                   )
                 })}
             </Grid>
-            {backButton && (
-              <Grid container justifyContent={"center"}>
-                <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Back</Button>
-              </Grid>
-            )}
-            <Grid container justifyContent={"center"}>
-              <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(foodData)}>Next</Button>
-            </Grid>
           </Grid>
+        )}
+        {nextData.length > 0 && (
+          <Grid container justifyContent={"center"}>
+            <Button variant="contained" sx={{fontSize: 20}} onClick={()=>handleNext(nextData)}>Next</Button>
+        </Grid>
         )}
       </Container>
     )
