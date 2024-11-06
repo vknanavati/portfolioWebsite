@@ -35,6 +35,7 @@ function App() {
   // });
 
   const [foodData, setFoodData] = useState([]);
+  const [recipeData, setRecipeData] = useState([]);
   const [groceryList, setGroceryList] = useState({});
   const [filteredRecipe, setFilteredRecipe] = useState([]);
   const [alertFavorite, setAlertFavorite] = useState(false);
@@ -358,6 +359,8 @@ function App() {
                 alertRemove={alertRemove}
                 setAlertRemove={setAlertRemove}
                 alertRecipe={alertRecipe}
+                recipeData={recipeData}
+                setRecipeData={setRecipeData}
               />
             }
           />
