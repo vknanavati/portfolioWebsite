@@ -127,9 +127,12 @@ function App() {
       console.log("makeRecipe: ", makeRecipe);
       console.log("recipe added to makeRecipe: ", recipe);
     } else {
-      setMakeRecipe(makeRecipe.filter((item)=> item.label !== recipe.label));
-      console.log("recipe removed: ", recipe);
-      setFilteredRecipe([]);
+        setMakeRecipe(makeRecipe.filter((item)=> item.label !== recipe.label));
+        setAlertRemove(true);
+        setTimeout(()=>{
+          setAlertRemove(false)
+        }, 3000);
+        console.log("recipe removed: ", recipe);
     }
   }
 
@@ -384,7 +387,7 @@ function App() {
             zIndex: 9999 // alert appears above other content
           }}
         >
-          Removed from Favorites
+          Removed Recipe
         </Alert>
       )}
       <Routes>
