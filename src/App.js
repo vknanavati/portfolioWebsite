@@ -14,7 +14,7 @@ import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
-import {AppBar, Toolbar, Box, Container, Typography} from '@mui/material';
+import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle} from '@mui/material';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function App() {
@@ -138,7 +138,7 @@ function App() {
 
     setGroceryList((groceryObject)=>{
 
-      //sets current ingredients to grocery[recipeName] or to empty array if groceryObject[recipeName] does not exists
+      //sets current ingredients to groceryObject[recipeName] or to empty array if groceryObject[recipeName] does not exists
       const currentIngredients = groceryObject[recipeName] || [];
 
       console.log("currentIngredients: ", currentIngredients);
@@ -162,7 +162,6 @@ function App() {
   }
 
   return (
-
     <Container maxWidth={"false"} disableGutters>
       <AppBar position="fixed" sx={{ backgroundColor: '#A44CD3' }}>
         <Toolbar
@@ -339,6 +338,55 @@ function App() {
           </Box>
         </Toolbar>
       </AppBar>
+      {alertFavorite && (
+        <Alert
+          severity="success"
+          onClose={() => setAlertFavorite(false)}
+          sx={{
+            position: "fixed",
+            top: "30px",// 20px from the top of the screen
+            left: "50%", //left edge of alert at half the viewport width
+            transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
+            width: "auto", // adjust width based on content
+            zIndex: 9999 // alert appears above other content
+          }}
+        >
+          <AlertTitle>Success</AlertTitle>
+          Recipe added to Favorites!
+        </Alert>
+      )}
+      {alertRecipe && (
+        <Alert
+          severity="success"
+          sx={{
+            position: "fixed",
+            top: "30px",// 20px from the top of the screen
+            left: "50%", //left edge of alert at half the viewport width
+            transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
+            width: "auto", // adjust width based on content
+            zIndex: 9999 // alert appears above other content
+          }}
+        >
+          <AlertTitle>Success</AlertTitle>
+          Added to Recipes
+        </Alert>
+      )}
+      {alertRemove && (
+        <Alert
+          severity="warning"
+          onClose={() => setAlertFavorite(false)}
+          sx={{
+            position: "fixed",
+            top: "30px",// 20px from the top of the screen
+            left: "50%", //left edge of alert at half the viewport width
+            transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
+            width: "auto", // adjust width based on content
+            zIndex: 9999 // alert appears above other content
+          }}
+        >
+          Removed from Favorites
+        </Alert>
+      )}
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
@@ -354,11 +402,6 @@ function App() {
                 setFoodData={setFoodData}
                 addMakeRecipe={addMakeRecipe}
                 favorites={favorites}
-                alertFavorite={alertFavorite}
-                setAlertFavorite={setAlertFavorite}
-                alertRemove={alertRemove}
-                setAlertRemove={setAlertRemove}
-                alertRecipe={alertRecipe}
                 recipeData={recipeData}
                 setRecipeData={setRecipeData}
               />
