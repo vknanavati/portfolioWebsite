@@ -129,7 +129,6 @@ function App() {
       setMakeRecipe(makeRecipe.filter((item)=> item.label !== recipe.label));
       console.log("recipe removed: ", recipe);
       setFilteredRecipe([]);
-
     }
   }
 
