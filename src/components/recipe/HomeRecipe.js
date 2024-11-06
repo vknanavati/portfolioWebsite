@@ -1,14 +1,10 @@
-import {useEffect} from 'react';
-import {Button,Container, Typography, Alert, AlertTitle} from '@mui/material';
+import { useEffect } from 'react';
+import {Button, Container, Typography} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { RecipeCard } from './RecipeCard';
 
-export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, setFoodData, addMakeRecipe, alertFavorite, setAlertFavorite, alertRemove, favorites, alertRecipe}) {
+export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, setFoodData, addMakeRecipe, favorites}) {
     console.log(process.env)
-
-    useEffect(()=>{
-      console.log("foodData: ", foodData)
-    }, [foodData]);
 
     useEffect(()=>{
       console.log("recipeData: ", recipeData)
@@ -35,7 +31,7 @@ export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, se
       .then(response => response.json())
       .then(data =>{
           console.log("My recipe data: ", data);
-          setFoodData(data)
+          setFoodData(data);
           setRecipeData([...recipeData, ...data.hits]);
       })
       .catch(error => console.error('Error:', error));
@@ -74,60 +70,11 @@ export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, se
             </Grid>
           </Grid>
 
-          {alertFavorite && (
-            <Alert
-              severity="success"
-              onClose={() => setAlertFavorite(false)}
-              sx={{
-                position: "fixed",
-                top: "30px",// 20px from the top of the screen
-                left: "50%", //left edge of alert at half the viewport width
-                transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
-                width: "auto", // adjust width based on content
-                zIndex: 9999 // alert appears above other content
-              }}
-            >
-              <AlertTitle>Success</AlertTitle>
-              Recipe added to Favorites!
-            </Alert>
-          )}
-          {alertRecipe && (
-            <Alert
-              severity="success"
-              sx={{
-                position: "fixed",
-                top: "30px",// 20px from the top of the screen
-                left: "50%", //left edge of alert at half the viewport width
-                transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
-                width: "auto", // adjust width based on content
-                zIndex: 9999 // alert appears above other content
-              }}
-            >
-              <AlertTitle>Success</AlertTitle>
-              Added to Recipes
-            </Alert>
-          )}
-          {alertRemove && (
-            <Alert
-              severity="warning"
-              onClose={() => setAlertFavorite(false)}
-              sx={{
-                position: "fixed",
-                top: "30px",// 20px from the top of the screen
-                left: "50%", //left edge of alert at half the viewport width
-                transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
-                width: "auto", // adjust width based on content
-                zIndex: 9999 // alert appears above other content
-              }}
-            >
-              Removed from Favorites
-            </Alert>
-          )}
         {recipeData.length > 0 && (
           <Grid>
             <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
                 {recipeData.map((hit, index) => {
-                    // console.log("HIT from foodData.hits:", hit);
+                    // console.log("HIT from recipeData.map:", hit);
                   return (
                     <RecipeCard
                       key={index}
