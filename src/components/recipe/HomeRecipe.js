@@ -3,12 +3,16 @@ import {Button,Container, Typography, Alert, AlertTitle} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { RecipeCard } from './RecipeCard';
 
-export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, alertFavorite, setAlertFavorite, alertRemove, favorites, alertRecipe}) {
+export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, setFoodData, addMakeRecipe, alertFavorite, setAlertFavorite, alertRemove, favorites, alertRecipe}) {
     console.log(process.env)
 
     useEffect(()=>{
       console.log("foodData: ", foodData)
-    }, [foodData])
+    }, [foodData]);
+
+    useEffect(()=>{
+      console.log("recipeData: ", recipeData)
+    }, [recipeData]);
 
     const handleClick = (cusineType) => {
       console.log("Searching city: ", cusineType, process.env.REACT_APP_RECIPE_KEY, process.env.REACT_APP_ID)
@@ -18,6 +22,7 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .then(data => {
           console.log("My recipe data: ", data);
           setFoodData(data);
+          setRecipeData(data.hits);
       })
       .catch(error => console.error('Error:', error))
     }
@@ -31,12 +36,12 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
       .then(data =>{
           console.log("My recipe data: ", data);
           setFoodData(data)
-
+          setRecipeData([...recipeData, ...data.hits]);
       })
       .catch(error => console.error('Error:', error));
     }
     return (
-        <Container maxWidth={"xl"} sx={{paddingTop: '64px', Bottom: '64px'}}>
+        <Container maxWidth={"xl"} sx={{paddingTop: '64px', paddingBottom: '64px'}}>
           <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
             <Typography
               variant="h3"
@@ -118,10 +123,10 @@ export function HomeRecipe({addFavorite, foodData, setFoodData, addMakeRecipe, a
               Removed from Favorites
             </Alert>
           )}
-        {foodData && foodData.hits && (
+        {recipeData.length > 0 && (
           <Grid>
             <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
-                {foodData.hits.map((hit, index) => {
+                {recipeData.map((hit, index) => {
                     // console.log("HIT from foodData.hits:", hit);
                   return (
                     <RecipeCard
