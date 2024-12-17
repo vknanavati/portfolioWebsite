@@ -1,28 +1,14 @@
 import Grid from '@mui/material/Grid2';
-import {Container, Typography, Box} from '@mui/material';
+import {Container, Box} from '@mui/material';
+import BACKGROUND from "../images/background.png"
 
 export function Home() {
     return (
         <Container maxWidth={"false"} disableGutters>
             <Grid>
-                <Typography
-                    variant="h4"
-                    marginTop={15}
-                    marginBottom={10}
-                    textAlign={"center"}
-                    color={"#666666"}
-                    fontWeight={700}
-                    fontSize={60}
-                    letterSpacing={"0.05rem"}
-                >
-                    Welcome to my Portfolio
-                </Typography>
                 <Box
                     sx={{
-                        display:"flex",
-                        overflowX: "auto",
-                        whiteSpace: "nowrap",
-                        width: "100%",
+                        backgroundImage: `url(${BACKGROUND})`,
                         paddingBottom: 20
                     }}
                 >
@@ -34,7 +20,7 @@ export function Home() {
                         <Grid
                             sx={{
                                 flexWrap: "nowrap",
-                                marginTop: 5,
+                                marginTop: 20,
                                 marginBottom: 10
                              }}>
                             <Box
