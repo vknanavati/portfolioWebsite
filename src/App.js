@@ -13,26 +13,9 @@ import {Weather} from './components/Weather';
 import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
-import {Contact} from './components/Contact';
-import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle} from '@mui/material';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button} from '@mui/material';
 
 function App() {
-
-  // const theme = createTheme({
-  //   typography: {
-  //     fontFamily: 'Poppins, sans-serif'
-  //   },
-  //   components: {
-  //     MuiTypography: {
-  //       styleOverrides: {
-  //         root: {
-  //           fontFamily: 'Poppins, sans-serif'
-  //         }
-  //       }
-  //     }
-  //   }
-  // });
 
   const [foodData, setFoodData] = useState([]);
   const [recipeData, setRecipeData] = useState([]);
@@ -166,80 +149,63 @@ function App() {
 
   return (
     <Container maxWidth={"false"} disableGutters>
-      <AppBar position="fixed" sx={{ backgroundColor: '#A44CD3' }}>
-        <Toolbar
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap' }}
-        >
+      <AppBar position="fixed" sx={{ background: 'transparent', boxShadow: 'none', alignItems: 'center' }}>
+        <Toolbar sx={{ paddingTop: 5 }}>
           <Box
             sx={{
-              flexShrink: 0,
-              paddingLeft: 1,
-              transition: "transform 0.3s ease-in-out",
-              "&:hover": {
-                transform: "scale(1.10)",
-              },
+              display: "flex",
+              alignItems: "center",
+              gap:4,
+              whiteSpace: "nowrap",
+              overflow: "auto",
+              flexShrink: 1
             }}
           >
             <Typography
-              variant="h5"
-              component={Link}
-              to="/contact"
-              sx={{
-                textDecoration: "none",
-                color: "white",
-              }}
-            >
-              Vimin Nanavati
-            </Typography>
-          </Box>
-          <Box sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                textAlign: "center",
-                gap:2,
-                ml: "auto",
-                fontSize: 20,
-                fontWeight: 500,
-                whiteSpace: "nowrap",
-                overflow: "auto",
-                flexShrink: 1
-              }}>
-            <Typography
               component={Link}
               to="/"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
+            >
+              <Button
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#E100F1",
+                    borderColor: "#E100F1",
+                  },
+                  fontFamily: "'Tilt Neon', sans-serif",
+                  fontSize: 30,
+                  color: '#FFFFFF',
+                  fontWeight: 800,
+                }}
               >
                 Home
+              </Button>
             </Typography>
             <Typography
               component={Link}
               to="/about"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
+            >
+              <Button
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#E100F1",
+                    borderColor: "#E100F1",
+                  },
+                  fontFamily: "'Tilt Neon', sans-serif",
+                  fontSize: 30,
+                  color: '#FFFFFF',
+                  fontWeight: 800,
+                }}
               >
                 About
+              </Button>
             </Typography>
-            <Typography
+            {/* <Typography
               component={Link}
               to="/recipe/homeRecipe"
               sx={{
                 color: 'white',
                 fontWeight: 600,
+                fontSize: 30,
                 textDecoration: 'none',
                 '&:hover': { color: '#FFEB3B' },
                 '&:active': { color: '#23FAFA' }
@@ -324,20 +290,7 @@ function App() {
               }}
               >
                 Counter
-            </Typography>
-            <Typography
-              component={Link}
-              to="/contact"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Contact
-            </Typography>
+            </Typography> */}
           </Box>
         </Toolbar>
       </AppBar>
@@ -439,7 +392,7 @@ function App() {
         <Route path="/currency" element={<CurrencyTwo/>}/>
         <Route path="/countdown" element={<Countdown/>}/>
         <Route path="/counter" element={<Counter/>}/>
-        <Route path="/contact" element={<Contact/>}/>
+
       </Routes>
     </Container>
   );
