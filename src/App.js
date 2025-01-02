@@ -167,13 +167,13 @@ function App() {
             >
               <Button
                 sx={{
+                  textShadow: '1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF',
                   "&:hover": {
-                    backgroundColor: "#E100F1",
-                    borderColor: "#E100F1",
+                    textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: 30,
-                  color: '#FFFFFF',
+                  fontSize: 35,
+                  color: '#AEFFFF',
                   fontWeight: 800,
                 }}
               >
@@ -186,13 +186,13 @@ function App() {
             >
               <Button
                 sx={{
+                  textShadow: '1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF',
                   "&:hover": {
-                    backgroundColor: "#E100F1",
-                    borderColor: "#E100F1",
+                    textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: 30,
-                  color: '#FFFFFF',
+                  fontSize: 35,
+                  color: '#AEFFFF',
                   fontWeight: 800,
                 }}
               >
