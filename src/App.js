@@ -13,7 +13,8 @@ import {Weather} from './components/Weather';
 import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
-import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button} from '@mui/material';
+import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button, Drawer, ListItem, ListItemButton,ListItemText, List, IconButton, Divider} from '@mui/material';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 function App() {
 
@@ -26,13 +27,14 @@ function App() {
   const [alertRecipe, setAlertRecipe] = useState(false)
   const [notes, setNotes] = useState("");
   const [notesList, setNotesList] = useState({});
+  const [open, setOpen] = useState(false);
 
   // useEffect(()=>{
   //   localStorage.clear()
   // })
 
   // empty array dependency means useEffect runs once when the component mounts
-    useEffect(()=>{
+  useEffect(()=>{
     const localGrocery = localStorage.getItem("grocery");
     setGroceryList( localGrocery ? JSON.parse(localGrocery) : {})
   }, [])
@@ -74,11 +76,19 @@ function App() {
     console.log("Favorites LENGTH: ", favorites.length)
   }, [groceryList, makeRecipe, favorites]);
 
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
     //add and remove favorite recipe card
-    const addFavorite = (recipe) => {
-    //adds recipe only if it is not already in favorites list
-    //if length of filtered array > 0 then it will not add the recipe
-    //checking if recipe exists in favorites array
+  const addFavorite = (recipe) => {
+  //adds recipe only if it is not already in favorites list
+  //if length of filtered array > 0 then it will not add the recipe
+  //checking if recipe exists in favorites array
     const currentFavorites = favorites || [];
     if (!(currentFavorites.filter(item => item.label === recipe.label).length > 0)) {
       setFavorites([...currentFavorites, recipe]);
@@ -151,6 +161,7 @@ function App() {
     <Container maxWidth={"false"} disableGutters>
       <AppBar position="fixed" sx={{ background: 'transparent', boxShadow: 'none', alignItems: 'center' }}>
         <Toolbar sx={{ paddingTop: 5 }}>
+          <Button onClick={handleDrawerOpen}>Projects</Button>
           <Box
             sx={{
               display: "flex",
@@ -294,6 +305,26 @@ function App() {
           </Box>
         </Toolbar>
       </AppBar>
+      <Drawer anchor="left" variant="persistent" open={open}>
+        <IconButton onClick={handleDrawerClose}>
+          <ChevronLeftIcon/>
+        </IconButton>
+        <Divider/>
+        <List>
+          {['Recipe App', 'Hostel App', 'Weather', 'ToDoList'].map((text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemText primary={text}/>
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+
+      </Drawer>
+
+
+
+
       {alertFavorite && (
         <Alert
           severity="success"
