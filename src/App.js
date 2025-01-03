@@ -168,16 +168,44 @@ function App() {
   return (
     <Container maxWidth={"false"} disableGutters>
       <AppBar position="fixed" sx={{ background: 'transparent', boxShadow: 'none', alignItems: 'center' }}>
-        <Toolbar sx={{ paddingTop: 5 }}>
-          <Button onClick={handleDrawerOpen}>Projects</Button>
+        <Toolbar sx={{ width: "100%", position: "relative", paddingTop: 5 }}>
+          <Box
+            sx={{
+                position: "absolute",
+                top: "15px",
+                padding: 0,
+                paddingLeft: 4,
+                transition: "transform 0.3s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.10)",},
+            }}
+          >
+            <Button
+              sx={{
+                textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
+                // "&:hover": {
+                //   textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                // },
+                fontFamily: "'Tilt Neon', sans-serif",
+                fontSize: 25,
+                fontStyle: "italic",
+                textTransform: "none",
+                color: "#AEFFFF",
+                fontWeight: 800,
+              }}
+              onClick={handleDrawerOpen}>
+                Projects
+            </Button>
+          </Box>
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               gap:4,
               whiteSpace: "nowrap",
               overflow: "auto",
-              flexShrink: 1
+              flexGrow: 1
             }}
           >
             <Typography
@@ -313,7 +341,16 @@ function App() {
           </Box>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="left" variant="persistent" open={open}>
+      <Drawer anchor="left" variant="persistent" open={open}
+      sx={{
+        '& .MuiDrawer-paper': {
+            width: 240,
+            marginTop: '64px',
+            height: 'calc(100% - 64px)',
+
+        }
+    }}
+      >
         <IconButton onClick={handleDrawerClose}>
           <ChevronLeftIcon/>
         </IconButton>
