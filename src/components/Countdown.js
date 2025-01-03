@@ -31,17 +31,18 @@ export function Countdown() {
         const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
 
         if (!dateRegex.test(input)) {
-        setErrorMessage("Please use mm/dd/yyyy date format")
+        setErrorMessage("Please use mm/dd/yyyy date format");
+        setCountdown(false);
         } else {
-        setErrorMessage("")
+            setErrorMessage("");
 
-        setDate(input)
-        setCountdown(true);
-        calculateTime(input)
+            setDate(input);
+            setCountdown(true);
+            calculateTime(input);
 
-        console.log("Input: ", input)
-        console.log("Date: ", date)
-        console.log("Countdown: ", countdown)
+            console.log("Input: ", input);
+            console.log("Date: ", date);
+            console.log("Countdown: ", countdown);
         }
     }
 
@@ -65,11 +66,16 @@ export function Countdown() {
                 direction={"column"}
             >
             <Typography
-                variant="h4"
-                color="textSecondary"
                 align="center"
-                marginTop={15}
-                marginBottom={3}
+                marginTop={30}
+                marginBottom={5}
+                sx={{
+                    textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                    fontFamily: "'Tilt Neon', sans-serif",
+                    fontSize: 40,
+                    color: '#AEFFFF',
+                    fontWeight: 800,
+                }}
             >
                 Countdown Clock
             </Typography>
@@ -78,44 +84,57 @@ export function Countdown() {
                     container
                     alignItems={"center"}
                     justifyContent={"center"}
+                    marginTop={5}
                 >
                     <Grid item>
                         <TextField
-                        sx={{
-                            width: 175,
-                            "& .MuiInputBase-root":{
-                            height: 46},
-                            input: {fontSize: 25}
-                        }}
-                        value={input}
-                        placeholder="enter date"
-                        onChange={e => setInput(e.target.value)}
+                            sx={{
+                                width: 175,
+                                "& .MuiInputBase-root": {
+                                    height: 46,
+                                },
+                                input: {fontSize: 25, color:"#F61297" },
+                                fieldset: {borderColor: "#F61297"},
+                                "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "#F61297",},
+                                '& .MuiOutlinedInput-root:hover fieldset': {
+                                    borderColor: '#F61297',},
+                            }}
+                            value={input}
+                            placeholder="enter date"
+                            onChange={e => setInput(e.target.value)}
                         />
                     </Grid>
                     <Grid item>
                         <Button
-                        type="submit"
-                        variant="contained"
-                        color="secondary"
-                        sx={{margin:2}}
-                        onClick={e => handleSubmit(e)}
+                            type="submit"
+                            variant="contained"
+                            sx={{
+                                margin:2,
+                                backgroundColor: "#F61297",
+                                "&:hover": {
+                                    backgroundColor: "#F61297",
+                                },
+                                fontWeight: 700
+                            }}
+                            onClick={e => handleSubmit(e)}
                         >
-                        Submit
+                            Submit
                         </Button>
                     </Grid>
                 </Grid>
                 <Grid>
-                    {errorMessage && <Typography color={"red"} fontSize={25} margin={1}>{errorMessage} </Typography>}
+                    {errorMessage && <Typography color={"#F61297"} fontSize={25} margin={1}>{errorMessage} </Typography>}
                 </Grid>
                 {countdown && (
                 <Grid
                     container
                     marginTop={6}
                 >
-                    {<Typography fontSize={25} margin={1}>{days !=="" ? `${days} days` : ""} </Typography>}
-                    {<Typography fontSize={25} margin={1}>{hours !=="" ? `${hours} hours` : ""} </Typography>}
-                    {<Typography fontSize={25} margin={1}>{minutes !=="" ? `${minutes} minutes` : ""} </Typography>}
-                    {<Typography fontSize={25} margin={1}>{seconds !=="" ? `${seconds} seconds`: ""} </Typography>}
+                    {<Typography fontSize={25} margin={1} sx={{color: "#F61297"}}>{days !=="" ? `${days} days` : ""} </Typography>}
+                    {<Typography fontSize={25} margin={1} sx={{color: "#F61297"}}>{hours !=="" ? `${hours} hours` : ""} </Typography>}
+                    {<Typography fontSize={25} margin={1} sx={{color: "#F61297"}}>{minutes !=="" ? `${minutes} minutes` : ""} </Typography>}
+                    {<Typography fontSize={25} margin={1} sx={{color: "#F61297"}}>{seconds !=="" ? `${seconds} seconds`: ""} </Typography>}
                 </Grid>
                 )}
           </form>
