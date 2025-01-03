@@ -13,6 +13,7 @@ import {Weather} from './components/Weather';
 import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
+import {Wallpaper} from './components/Wallpaper'
 import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button, Drawer, ListItem, ListItemButton,ListItemText, List, IconButton, Divider} from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
@@ -28,6 +29,13 @@ function App() {
   const [notes, setNotes] = useState("");
   const [notesList, setNotesList] = useState({});
   const [open, setOpen] = useState(false);
+
+  const projects = [
+    { name: 'Recipe Search', path: 'recipe/homeRecipe' },
+    { name: 'Hostel Comparer', path: '/hostel' },
+    { name: 'Countdown Timer', path: '/countdown' },
+
+  ];
 
   // useEffect(()=>{
   //   localStorage.clear()
@@ -311,10 +319,10 @@ function App() {
         </IconButton>
         <Divider/>
         <List>
-          {['Recipe App', 'Hostel App', 'Weather', 'ToDoList'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+          {projects.map((project, index) => (
+            <ListItem key={index} component={Link} to={project.path} onClick={handleDrawerClose} disablePadding>
               <ListItemButton>
-                <ListItemText primary={text}/>
+                <ListItemText primary={project.name}/>
               </ListItemButton>
             </ListItem>
           ))}
@@ -374,6 +382,7 @@ function App() {
           Removed Recipe
         </Alert>
       )}
+      <Wallpaper>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
@@ -425,6 +434,7 @@ function App() {
         <Route path="/counter" element={<Counter/>}/>
 
       </Routes>
+      </Wallpaper>
     </Container>
   );
 }
