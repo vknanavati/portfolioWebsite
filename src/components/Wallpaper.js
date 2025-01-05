@@ -10,7 +10,7 @@ export function Wallpaper({children}) {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             width: '100vw',
-            height: '100vh',
+            minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column'
 
