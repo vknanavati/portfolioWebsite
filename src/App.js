@@ -34,7 +34,6 @@ function App() {
     { name: 'Recipe Search', path: 'recipe/homeRecipe' },
     { name: 'Hostel Comparer', path: '/hostel' },
     { name: 'Countdown Timer', path: '/countdown' },
-
   ];
 
   // useEffect(()=>{
@@ -92,6 +91,10 @@ function App() {
     setOpen(false);
   };
 
+  const handleToggleDrawer = () => {
+    setOpen(prevState => !prevState);
+  };
+
     //add and remove favorite recipe card
   const addFavorite = (recipe) => {
   //adds recipe only if it is not already in favorites list
@@ -116,7 +119,7 @@ function App() {
       }, 3000);
     }
     console.log("favorites:", JSON.stringify(favorites))
-  }
+  };
 
   const addMakeRecipe = (recipe) => {
     if (!(makeRecipe.filter(item => item.label === recipe.label).length > 0)){
@@ -135,7 +138,7 @@ function App() {
         }, 3000);
         console.log("recipe removed: ", recipe);
     }
-  }
+  };
 
   // onClick={() => addGrocery(recipe.label, ingredient.food)}
   const addGrocery = (recipeName, ingredient) => {
@@ -163,7 +166,7 @@ function App() {
           return {...groceryObject, [recipeName]: updatedIngredients}
       }
     });
-  }
+  };
 
   return (
     <Container maxWidth={"false"} disableGutters>
@@ -193,7 +196,7 @@ function App() {
                 color: "#AEFFFF",
                 fontWeight: 800,
               }}
-              onClick={handleDrawerOpen}>
+              onClick={handleToggleDrawer}>
                 Projects
             </Button>
           </Box>
@@ -341,15 +344,27 @@ function App() {
           </Box>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="left" variant="persistent" open={open}
-      sx={{
-        '& .MuiDrawer-paper': {
-            width: 240,
-            marginTop: '64px',
-            height: 'calc(100% - 64px)',
-
+      <Drawer
+        anchor="left"
+        variant="temporary"
+        open={open}
+        onClose={(_, reason) =>
+          reason === "backdropClick" && setOpen(false)
         }
-    }}
+        sx={{
+          '& .MuiDrawer-paper': {
+              width: 200,
+              marginTop: "70px",
+
+              height: "calc(100% - 70px)",
+              backgroundColor: "#06052B",
+              //brighter alternative: #060940
+              borderTop: "2px solid #F61297",
+              borderRight: "2px solid #F61297",
+
+              boxShadow: "0 0 20px #F61297"
+            },
+        }}
       >
         <IconButton onClick={handleDrawerClose}>
           <ChevronLeftIcon/>
@@ -357,18 +372,20 @@ function App() {
         <Divider/>
         <List>
           {projects.map((project, index) => (
-            <ListItem key={index} component={Link} to={project.path} onClick={handleDrawerClose} disablePadding>
+            <ListItem
+              key={index}
+              component={Link}
+              to={project.path}
+              onClick={handleDrawerClose}
+              disablePadding
+              >
               <ListItemButton>
                 <ListItemText primary={project.name}/>
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-
       </Drawer>
-
-
-
 
       {alertFavorite && (
         <Alert
