@@ -87,6 +87,7 @@ export function Hostel() {
       setGraph7(`${baseURL}/static/graph7.png`);
       setGraph8(`${baseURL}/static/graph8.png`);
       setSecondLoad(false)
+      console.log("graphs printed")
     } catch (error) {
       console.log(error)
       setError("Error: Could not connect to server.")
@@ -108,13 +109,16 @@ export function Hostel() {
     >
       <Grid>
         <Typography
-          variant="h4"
           sx={{
-            marginTop:15,
+            marginTop: 20,
             marginBottom: 5,
-            color: "#EF6AE8",
-            fontWeight: 700,
-            textAlign: "center"
+            // color: "#EF6AE8",
+            textAlign: "center",
+            textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
+            fontFamily: "'Tilt Neon', sans-serif",
+            fontSize: 40,
+            color: '#AEFFFF',
+            fontWeight: 800,
 
           }}
         >
@@ -243,21 +247,22 @@ export function Hostel() {
           <Grid
             container
             marginTop={5}
+            justifyContent={"center"}
           >
-            <Grid
-              container
-              justifyContent={"center"}
-              marginLeft={"-40px"}
-            >
-              <FormControl sx={{width: 290, background: "white"}}>
+            <Grid>
+              <FormControl sx={{width: 290, background: "white", padding: 2, }}>
                 <InputLabel
                   sx={{
                     '&.MuiInputLabel-shrink':{
                       color:"black"
                     },
-                    fontSize: 20,
+                    fontSize: 30,
+                    marginLeft: 1,
+                    paddingTop: 1
                   }}
-                >Choose City</InputLabel>
+                >
+                  Choose City
+                </InputLabel>
                 <Select
                   sx={{
                     "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
