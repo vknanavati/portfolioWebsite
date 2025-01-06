@@ -51,9 +51,14 @@ export function CurrencyTwo() {
                 alignItems={"center"}
             >
                 <Typography
-                    variant="h4"
-                    marginTop={15}
-                    color={"#00CCCC"}
+                    marginTop={30}
+                    sx={{
+                        textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                        fontFamily: "'Tilt Neon', sans-serif",
+                        fontSize: 40,
+                        color: '#AEFFFF',
+                        fontWeight: 800,
+                    }}
                 >
                     Currency Converter
                 </Typography>
@@ -68,21 +73,26 @@ export function CurrencyTwo() {
                             <TextField
                                   sx={{
                                     width: 160,
+                                    fieldset: {borderColor: "#FF00FF"},
                                     "& .MuiInputBase-root":{
-                                      height: 50
+                                      height: 60
                                     },
                                     input: {
                                       textAlign: "center",
-                                      fontSize: 30
+                                      fontSize: 30,
+                                      color: "#FF00FF"
                                     },
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                                      borderColor: "#00CCCC"
-                                    }
+                                      borderColor: "#FF00FF"
+                                    },
+
+                                    '& .MuiOutlinedInput-root:hover fieldset': {
+                                        borderColor: '#FF00FF',},
                                   }}
                                 value={amount}
+                                placeholder="amount"
                                 type="text"
                                 onChange={e=>setAmount(e.target.value)}
-
                             />
                         </Grid>
                         <Grid
@@ -93,20 +103,32 @@ export function CurrencyTwo() {
                                 <FormControl sx={{width: 120}}>
                                     <InputLabel
                                           sx={{
+                                            color: "#FF00FF",
+                                            borderColor: "#FF00FF",
                                             '&.MuiInputLabel-shrink':{
-                                              color:"#00CCCC"
+                                            color:"#FF00FF"
                                             },
                                             fontSize: 25
-                                          }}
+                                        }}
                                     >
                                         From
                                     </InputLabel>
                                     <Select
-                                        sx={{
-                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
-                                            borderColor: "#00CCCC"
-                                        },
-                                        fontSize: 25
+                                       sx={{
+                                            '.MuiOutlinedInput-notchedOutline': {
+                                                borderColor: "#FF00FF"},
+
+                                            "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
+                                                borderColor: "#FF00FF"
+                                            },
+                                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                                borderColor: "#FF00FF",
+                                            },
+                                            '.MuiSvgIcon-root ': {
+                                                fill: "#FF00FF",
+                                            },
+                                            fontSize: 25,
+                                            color: "#FF00FF"
                                         }}
                                         label="From"
                                         onChange={e=>setFrom(e.target.value)}
@@ -121,8 +143,10 @@ export function CurrencyTwo() {
                                 <FormControl sx={{width: 120}}>
                                     <InputLabel
                                         sx={{
+                                            color: "#FF00FF",
+                                            borderColor: "#FF00FF",
                                             '&.MuiInputLabel-shrink':{
-                                            color:"#00CCCC"
+                                            color:"#FF00FF"
                                             },
                                             fontSize: 25
                                         }}
@@ -131,16 +155,26 @@ export function CurrencyTwo() {
                                     </InputLabel>
                                     <Select
                                         sx={{
-                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
-                                            borderColor: "#00CCCC"
-                                        },
-                                        fontSize: 25
+                                            '.MuiOutlinedInput-notchedOutline': {
+                                                borderColor: "#FF00FF"},
+
+                                            "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
+                                                borderColor: "#FF00FF"
+                                            },
+                                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                                borderColor: "#FF00FF",
+                                            },
+                                            '.MuiSvgIcon-root ': {
+                                                fill: "#FF00FF",
+                                            },
+                                            fontSize: 25,
+                                            color: "#FF00FF"
                                         }}
                                         label="To"
                                         onChange={e=>setTo(e.target.value)}
                                     >
                                         {currency_codes.map((currency_code, i) =>{
-                                            return <MenuItem key={i} value={currency_code}>{currency_code}</MenuItem>
+                                            return <MenuItem key={i} sx={{color: "#FF00FF" }} value={currency_code}>{currency_code}</MenuItem>
                                         })}
                                     </Select>
                                 </FormControl>
@@ -153,22 +187,22 @@ export function CurrencyTwo() {
                     >
                         <Button
                             sx={{
-                            backgroundColor: "#00CCCC",
-                            "&:hover": {
-                                backgroundColor: "#00CCCC",
-                            },
-                            fontWeight: 700,
-                            fontSize: 25
+                                margin:2,
+                                backgroundColor: "#F61297",
+                                "&:hover": {
+                                    backgroundColor: "#F61297",
+                                },
+                                fontWeight: 700,
+                                fontSize: 25
                             }}
                             variant="contained"
                             type="submit"
-
                         >
                             Submit
                         </Button>
                     </Grid>
                 </form>
-                {conversion && <Typography marginTop={5} fontSize={30}>{conversion.toFixed(2)} {to}</Typography>}
+                {conversion && <Typography sx={{color: "#FF00FF"}}marginTop={5} fontSize={30}>{conversion.toFixed(2)} {to}</Typography>}
             </Grid>
         </Container>
     )
