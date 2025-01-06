@@ -6,7 +6,7 @@ export function RecipeApp({makeRecipe, favorites}) {
 
   return (
     <Container maxWidth={"false"} disableGutters>
-      <AppBar position="fixed" sx={{backgroundColor: '#3A5B26', marginTop: "64px"}}>
+      <AppBar position="fixed" sx={{backgroundColor: "#F61297", marginTop: "128px"}}>
         <Toolbar>
           <Box sx={{
             display: "flex",
