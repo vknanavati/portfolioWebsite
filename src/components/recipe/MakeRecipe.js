@@ -68,7 +68,7 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                         marginTop: "190px",
                         // height: 'calc(100% - 64px)',
                         // backgroundColor: '#F61297',
-                        background: "linear-gradient(145deg, #140a26f2, #580f58e6)",
+                        background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
                         // backdropFilter: 'blur(10px)',
                     }
                 }}
@@ -90,9 +90,9 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                                             color: "#FF00FF",
                                             transform: "translateY(-1px)",
                                             boxShadow: `
-                                                0 0 10px #ff00ff4d,
-                                                0 0 20px #ff00ff33,
-                                                0 0 30px #ff00ff1a
+                                                0 0 10px #FF00ff4D,
+                                                0 0 20px #FF00FF33,
+                                                0 0 30px #FF00FF1A
                                             `,
                                             textShadow: `
                                                 0 0 8px #FF00FF,
