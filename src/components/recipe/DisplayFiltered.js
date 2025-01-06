@@ -13,7 +13,7 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
         <Box display="flex" justifyContent={"flex-end"} sx={{width: '100%'}}>
             <Button
                 variant="contained"
-                sx={{ marginLeft: 'auto', backgroundColor: '#3A5B26' }}
+                sx={{ marginLeft: 'auto', backgroundColor: '#F61297' }}
                 onClick={()=>addMakeRecipe(makeRecipe)}
                 >
                 Remove Recipe
@@ -43,7 +43,8 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
                         marginLeft: 20,
                         marginTop: 4,
                         marginBottom: 10,
-                        borderRadius: 3
+                        borderRadius: 3,
+                        backgroundColor: "white"
                     }}
                 >
                     <Typography
@@ -98,7 +99,8 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
                                 marginLeft: 20,
                                 marginTop: 4,
                                 marginBottom: 10,
-                                borderRadius: 3
+                                borderRadius: 3,
+                                backgroundColor: "white"
                             }}
                         >
                             <Typography variant="h5" sx={{ marginBottom: 2 }}>Notes</Typography>
