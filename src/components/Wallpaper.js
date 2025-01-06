@@ -12,11 +12,21 @@ export function Wallpaper({children}) {
             width: '100%',
             minHeight: '100vh',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            overflow: 'hidden'
 
         }}
         >
-            {children}
+            <Box
+                sx={{
+                    width: '100%',
+                    overflowX: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column'
+                }}
+            >
+                {children}
+            </Box>
         </Box>
     )
 }
