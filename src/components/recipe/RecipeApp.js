@@ -7,6 +7,8 @@ export function RecipeApp({makeRecipe, favorites}) {
   const navLinkStyles = {
     color: "#00F7FF",
     textShadow: "0 0 8px #00F7FF",
+    fontSize: 27,
+    fontFamily: "'Tilt Neon', sans-serif",
     '&:hover': {
       color: "#40FBFF",
       textShadow: `
@@ -35,12 +37,9 @@ export function RecipeApp({makeRecipe, favorites}) {
             textAlign: "center",
             gap:2,
             ml: "auto",
-            fontSize: 20,
-            fontWeight: 500,
             whiteSpace: "nowrap",
             overflow: "auto",
             flexShrink: 1,
-            fontFamily: "'Tilt Neon', sans-serif"
           }}>
             <Typography variant="h6" component={Link} to="/recipe/homeRecipe"  sx={{ textDecoration: 'none', ...navLinkStyles }}>
               Home
