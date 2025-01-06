@@ -94,7 +94,7 @@ export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, se
                 })}
             </Grid>
             <Grid container justifyContent={"center"}>
-              <Button variant="contained" sx={{fontSize: 20, backgroundColor: '#3A5B26'}} onClick={()=>handleNext(foodData)}>Next</Button>
+              <Button variant="contained" sx={{fontSize: 20, backgroundColor: '#F61297'}} onClick={()=>handleNext(foodData)}>Next</Button>
             </Grid>
           </Grid>
         )}
