@@ -65,9 +65,11 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                 sx={{
                     '& .MuiDrawer-paper': {
                         width: 240,
-                        marginTop: '150px',
+                        marginTop: "190px",
                         // height: 'calc(100% - 64px)',
-                        backgroundColor: '#F61297'
+                        // backgroundColor: '#F61297',
+                        background: "linear-gradient(145deg, #140a26f2, #580f58e6)",
+                        // backdropFilter: 'blur(10px)',
                     }
                 }}
             >
@@ -77,13 +79,20 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                             <ListItem key={i}>
                                 <ListItemButton
                                     sx={{
-                                        backgroundColor: '#3A5B26',
-                                        borderRadius: 3,
-                                        color: 'white',
+                                        backgroundColor: "#0D0D19B3",
+                                        backdropFilter: "blur(8px)",
+                                        borderRadius: "12px",
+                                        padding: "12px",
+                                        margin: "8px 0",
+                                        color: "#FFF",
                                         '&:hover': {
-                                            backgroundColor: '#3A5B26',
-                                            border: '1px solid #000',
-                                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                                            backgroundColor: "#06052B",
+                                            color: "#FF00FF",
+                                            textShadow: `
+                                            0 0 8px #FF00FF,
+                                            0 0 12px #FF00FF,
+                                            0 0 16px #FF00FF
+                                          `
                                         }
                                     }}
                                     onClick={() => selectedRecipe(title.label)}>
