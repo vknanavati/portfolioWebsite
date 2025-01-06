@@ -14,8 +14,7 @@ import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Wallpaper} from './components/Wallpaper'
-import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button, Drawer, ListItem, ListItemButton,ListItemText, List, IconButton, Divider} from '@mui/material';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button, Drawer, ListItem, ListItemButton,ListItemText, List} from '@mui/material';
 
 function App() {
 
@@ -34,6 +33,7 @@ function App() {
     { name: 'Recipe Search', path: 'recipe/homeRecipe' },
     { name: 'Hostel Comparer', path: '/hostel' },
     { name: 'Countdown Timer', path: '/countdown' },
+    { name: 'Currency Converter', path: '/currency'},
   ];
 
   // useEffect(()=>{
@@ -82,10 +82,6 @@ function App() {
     console.log("favorites updated: ", JSON.stringify(favorites));
     console.log("Favorites LENGTH: ", favorites.length)
   }, [groceryList, makeRecipe, favorites]);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
 
   const handleDrawerClose = () => {
     setOpen(false);
@@ -170,7 +166,7 @@ function App() {
 
   return (
     <Container maxWidth={"false"} disableGutters>
-      <AppBar position="fixed" sx={{ background: 'transparent', boxShadow: 'none', alignItems: 'center' }}>
+      <AppBar position="fixed" sx={{ background: "transparent", boxShadow: "none", alignItems: "center" }}>
         <Toolbar sx={{ width: "100%", position: "relative", paddingTop: 5 }}>
           <Box
             sx={{
@@ -205,7 +201,7 @@ function App() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap:4,
+              gap: 4,
               whiteSpace: "nowrap",
               overflow: "auto",
               flexGrow: 1
@@ -236,111 +232,19 @@ function App() {
             >
               <Button
                 sx={{
-                  textShadow: '1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF',
+                  textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
                   "&:hover": {
-                    textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                    textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
                   fontSize: 35,
-                  color: '#AEFFFF',
+                  color: "#AEFFFF",
                   fontWeight: 800,
                 }}
               >
                 About
               </Button>
             </Typography>
-            {/* <Typography
-              component={Link}
-              to="/recipe/homeRecipe"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                fontSize: 30,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Recipe Cards
-            </Typography>
-            <Typography
-              component={Link}
-              to="/hostel"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Hostel Graphs
-            </Typography>
-            <Typography
-              component={Link}
-              to="/todo"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-            >
-              To Do List
-            </Typography>
-            <Typography
-              component={Link}
-              to="/weather"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Weather
-            </Typography>
-            <Typography
-              component={Link}
-              to="/currency"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Currency Converter
-            </Typography>
-            <Typography
-              component={Link}
-              to="/countdown"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Countdown
-            </Typography>
-            <Typography
-              component={Link}
-              to="/counter"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&:hover': { color: '#FFEB3B' },
-                '&:active': { color: '#23FAFA' }
-              }}
-              >
-                Counter
-            </Typography> */}
           </Box>
         </Toolbar>
       </AppBar>
@@ -355,21 +259,18 @@ function App() {
           '& .MuiDrawer-paper': {
               width: 200,
               marginTop: "70px",
-
               height: "calc(100% - 70px)",
-              backgroundColor: "#06052B",
+              pt: 4,
+              // backgroundColor: "#06052B",
+              background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
               //brighter alternative: #060940
-              borderTop: "2px solid #F61297",
-              borderRight: "2px solid #F61297",
-
-              boxShadow: "0 0 20px #F61297"
+              borderTop: "2px solid #FF00FF",
+              borderRight: "2px solid #FF00FF",
+              boxShadow: "0 0 20px #FF00FF",
+              borderTopRightRadius: "20px"
             },
         }}
       >
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronLeftIcon/>
-        </IconButton>
-        <Divider/>
         <List>
           {projects.map((project, index) => (
             <ListItem
@@ -378,8 +279,24 @@ function App() {
               to={project.path}
               onClick={handleDrawerClose}
               disablePadding
+              sx={{
+                textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
+                "&:hover": {
+                  textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                },
+                fontFamily: "'Tilt Neon', sans-serif",
+                fontStyle: "italic",
+                textTransform: "none",
+                color: "#AEFFFF",
+                fontWeight: 800,
+              }}
               >
-              <ListItemButton>
+              <ListItemButton
+              sx={{
+                '& .MuiListItemText-primary': {
+                  fontSize: "20px",
+                }
+              }}>
                 <ListItemText primary={project.name}/>
               </ListItemButton>
             </ListItem>
