@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid2';
 export function AboutRecipe() {
 
     return (
-    <Container sx={{ paddingTop: '128px' }}>
+    <Container sx={{ paddingTop: '200px' }}>
         <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
 
             <Grid item sx={{marginTop: 4, marginBottom: 3}}>
@@ -28,7 +28,7 @@ export function AboutRecipe() {
                     After clicking on the cusine type of your choice, recipe cards will appear.</Typography>
             </Grid>
 
-            <Grid item sx={{ textAlign: "left", backgroundColor: "white", marginBottom: 2, padding: 2}}>
+            <Grid item sx={{ textAlign: "left", backgroundColor: "white", marginBottom: 2, padding: 4}}>
                 <Typography variant="body1" fontSize={21}
                 >
                     Each recipe card contains:
