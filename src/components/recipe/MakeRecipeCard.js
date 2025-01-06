@@ -16,7 +16,8 @@ export function MakeRecipeCard({recipe, addGrocery, groceryList}) {
                 textAlign: "center",
                 width: "370px",
                 height: "auto",
-                borderRadius: 3
+                borderRadius: 3,
+                backgroundColor: "white"
             }}
         >
             <Typography variant="h5" sx={{marginBottom: 2}}>{recipe.label}</Typography>
