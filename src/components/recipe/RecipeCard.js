@@ -19,7 +19,8 @@ export function RecipeCard ({recipe, addFavorite, addMakeRecipe, favorites}) {
             textAlign: "center",
             width: "370px",
             height: "auto",
-            borderRadius: 3
+            borderRadius: 3,
+            backgroundColor: "white"
           }}
       >
         {isFavorite ? (
