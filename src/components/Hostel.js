@@ -97,15 +97,15 @@ export function Hostel() {
 
   return (
     <Container
-    sx={{
-      paddingBottom: 20,
-      marginLeft: "auto",
-      marginRight: "auto",
-      paddingLeft: 10,
-      paddingRight: 10,
-      maxWidth: "90vw",
-    }}
-    maxWidth={"false"}
+      sx={{
+        paddingBottom: 20,
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingLeft: 10,
+        paddingRight: 10,
+        maxWidth: "90vw",
+      }}
+      maxWidth={"false"}
     >
       <Grid>
         <Typography
@@ -129,20 +129,24 @@ export function Hostel() {
           elevation={5}
           sx={{
             paddingX: 10,
-            paddingY: 5
+            paddingY: 5,
+            background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
+            color: "#80DEEA",
+            borderRadius: 7,
+            boxShadow: 6
           }}
         >
-          <Typography>
+          <Typography variant="body1" fontSize={25} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
             Welcome to the Hostel Ratings Comparison. Here you will be able to see bar graphs depicting the top hostels in the city of your choice.
             The first graph will rate the top 10 hostels by average overall rating. The subsequent graphs rank each hostel by their rating in specific categories.
             The categories shown are Security, Location, Staff, Atmosphere, Cleanliness, Value, and Facilities.
             <br/>
             <br/>
           </Typography>
-          <Typography variant="h6" >
+          <Typography fontSize={30} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
             How to Use this App
           </Typography>
-          <Typography>
+          <Typography variant="body1" fontSize={25} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
             <br/>
             1. Type the country of your choice into the input box and click 'submit'.<br/>
             2. Wait for a dropdown box to appear. This may take a few moments. <br/>
@@ -151,10 +155,10 @@ export function Hostel() {
             <br/>
             <br/>
           </Typography>
-          <Typography variant="h6">
+          <Typography fontSize={30} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
            How it Works
           </Typography>
-          <Typography>
+          <Typography variant="body1" fontSize={25} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
             <br/>
             The frontend portion of this application uses React which is a JavaScript library for building user interfaces(UI).
             When the user enters a country name in the input field of the form, the app uses Fetch API to send this country name to the backend.
