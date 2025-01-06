@@ -80,6 +80,7 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                                 <ListItemButton
                                     sx={{
                                         backgroundColor: "#0D0D19B3",
+                                        fontFamily: "'Tilt Neon', sans-serif",
                                         backdropFilter: "blur(8px)",
                                         borderRadius: "12px",
                                         padding: "12px",
@@ -102,7 +103,7 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                                         }
                                     }}
                                     onClick={() => selectedRecipe(title.label)}>
-                                    <ListItemText>
+                                    <ListItemText sx={{fontSize: 25}} disableTypography>
                                         {title.label}
                                     </ListItemText>
                                 </ListItemButton>
