@@ -88,10 +88,16 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
                                         '&:hover': {
                                             backgroundColor: "#06052B",
                                             color: "#FF00FF",
+                                            transform: "translateY(-1px)",
+                                            boxShadow: `
+                                                0 0 10px #ff00ff4d,
+                                                0 0 20px #ff00ff33,
+                                                0 0 30px #ff00ff1a
+                                            `,
                                             textShadow: `
-                                            0 0 8px #FF00FF,
-                                            0 0 12px #FF00FF,
-                                            0 0 16px #FF00FF
+                                                0 0 8px #FF00FF,
+                                                0 0 12px #FF00FF,
+                                                0 0 16px #FF00FF
                                           `
                                         }
                                     }}
