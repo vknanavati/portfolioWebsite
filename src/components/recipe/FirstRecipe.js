@@ -46,7 +46,8 @@ export function FirstRecipe ({makeRecipe, groceryList, addGrocery, notes, notesL
                             marginLeft: 20,
                             marginTop: 4,
                             marginBottom: 10,
-                            borderRadius: 3
+                            borderRadius: 3,
+                            backgroundColor: "white"
                         }}
                     >
                         <Typography
@@ -102,7 +103,8 @@ export function FirstRecipe ({makeRecipe, groceryList, addGrocery, notes, notesL
                                     marginLeft: 20,
                                     marginTop: 4,
                                     marginBottom: 10,
-                                    borderRadius: 3
+                                    borderRadius: 3,
+                                    backgroundColor: "white"
                                 }}
                             >
                                 <Typography variant="h5" sx={{ marginBottom: 2 }}>Notes</Typography>
