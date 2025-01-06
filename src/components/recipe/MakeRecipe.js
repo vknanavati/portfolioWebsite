@@ -58,16 +58,16 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
     }
 
     return (
-        <Container sx={{ paddingTop: '128px' }}>
+        <Container sx={{ paddingTop: '170px' }}>
             <Drawer
                 variant="permanent"
                 anchor="left"
                 sx={{
                     '& .MuiDrawer-paper': {
                         width: 240,
-                        marginTop: '64px',
-                        height: 'calc(100% - 64px)',
-                        backgroundColor: '#D0D59D'
+                        marginTop: '150px',
+                        // height: 'calc(100% - 64px)',
+                        backgroundColor: '#F61297'
                     }
                 }}
             >
