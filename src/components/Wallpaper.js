@@ -9,7 +9,7 @@ export function Wallpaper({children}) {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            width: '100vw',
+            width: '100%',
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column'
@@ -17,7 +17,6 @@ export function Wallpaper({children}) {
         }}
         >
             {children}
-
         </Box>
     )
 }
