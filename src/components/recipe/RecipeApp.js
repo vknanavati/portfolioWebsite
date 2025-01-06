@@ -28,7 +28,8 @@ export function RecipeApp({makeRecipe, favorites}) {
         }}
       >
         <Toolbar>
-          <Box sx={{
+          <Box
+          sx={{
             display: "flex",
             flexWrap: "wrap",
             textAlign: "center",
@@ -38,7 +39,8 @@ export function RecipeApp({makeRecipe, favorites}) {
             fontWeight: 500,
             whiteSpace: "nowrap",
             overflow: "auto",
-            flexShrink: 1
+            flexShrink: 1,
+            fontFamily: "'Tilt Neon', sans-serif"
           }}>
             <Typography variant="h6" component={Link} to="/recipe/homeRecipe"  sx={{ textDecoration: 'none', ...navLinkStyles }}>
               Home
