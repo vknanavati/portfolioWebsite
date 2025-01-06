@@ -19,7 +19,7 @@ export function FirstRecipe ({makeRecipe, groceryList, addGrocery, notes, notesL
             <Box display="flex" justifyContent={"flex-end"} sx={{width: '100%'}}>
                 <Button
                     variant="contained"
-                    sx={{ marginLeft: 'auto', backgroundColor: '#3A5B26' }}
+                    sx={{ marginLeft: 'auto', backgroundColor: '#F61297' }}
                     onClick={()=>addMakeRecipe(firstRecipe)}
                 >
                     Remove Recipe
