@@ -73,8 +73,13 @@ export function CurrencyTwo() {
                             <TextField
                                   sx={{
                                     width: 160,
-                                    fieldset: {borderColor: "#FF00FF"},
-                                    "& .MuiInputBase-root":{
+                                    fieldset: {
+                                        borderColor: "#FF00FF"
+                                    },
+                                    "& input": {
+                                        fontFamily: "Orbitron, sans-serif"
+                                    },
+                                    "& .MuiInputBase-root": {
                                       height: 60
                                     },
                                     input: {
@@ -102,11 +107,11 @@ export function CurrencyTwo() {
                             <Grid margin={3}>
                                 <FormControl sx={{width: 120}}>
                                     <InputLabel
-                                          sx={{
+                                        sx={{
                                             color: "#FF00FF",
                                             borderColor: "#FF00FF",
                                             '&.MuiInputLabel-shrink':{
-                                            color:"#FF00FF"
+                                                color:"#FF00FF"
                                             },
                                             fontSize: 25
                                         }}
@@ -146,7 +151,7 @@ export function CurrencyTwo() {
                                             color: "#FF00FF",
                                             borderColor: "#FF00FF",
                                             '&.MuiInputLabel-shrink':{
-                                            color:"#FF00FF"
+                                                color:"#FF00FF"
                                             },
                                             fontSize: 25
                                         }}
@@ -173,8 +178,8 @@ export function CurrencyTwo() {
                                         label="To"
                                         onChange={e=>setTo(e.target.value)}
                                     >
-                                        {currency_codes.map((currency_code, i) =>{
-                                            return <MenuItem key={i} sx={{color: "#FF00FF" }} value={currency_code}>{currency_code}</MenuItem>
+                                        {currency_codes.map((currency_code, i) => {
+                                            return <MenuItem key={i} value={currency_code}>{currency_code}</MenuItem>
                                         })}
                                     </Select>
                                 </FormControl>
@@ -187,13 +192,20 @@ export function CurrencyTwo() {
                     >
                         <Button
                             sx={{
-                                margin:2,
-                                backgroundColor: "#F61297",
-                                "&:hover": {
-                                    backgroundColor: "#F61297",
-                                },
+                                margin: 2,
+                                backgroundColor: "#FF00FF",
+                                fontSize: 18,
                                 fontWeight: 700,
-                                fontSize: 25
+                                color: '#fff',
+                                fontFamily: "Orbitron, sans-serif",
+                                padding: "10px 25px",
+                                borderRadius: "4px",
+                                textTransform: "none",
+                                boxShadow: "0 0 10px #FF00FF, 0 0 20px #FF00FF",
+                                '&:hover': {
+                                    backgroundColor: "#FF33FF",
+                                    boxShadow: "0 0 15px #FF00FF, 0 0 25px #FF00FF, 0 0 35px #FF00FF",
+                                }
                             }}
                             variant="contained"
                             type="submit"
@@ -202,7 +214,7 @@ export function CurrencyTwo() {
                         </Button>
                     </Grid>
                 </form>
-                {conversion && <Typography sx={{color: "#FF00FF"}}marginTop={5} fontSize={30}>{conversion.toFixed(2)} {to}</Typography>}
+                {conversion && <Typography sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}} marginTop={5} fontSize={30}>{conversion.toFixed(2)} {to}</Typography>}
             </Grid>
         </Container>
     )
