@@ -37,7 +37,7 @@ export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, se
       .catch(error => console.error('Error:', error));
     }
     return (
-        <Container maxWidth={"xl"} sx={{paddingTop: '64px', paddingBottom: '64px'}}>
+        <Container maxWidth={"xl"} sx={{paddingTop: '150px', paddingBottom: '64px'}}>
           <Grid container justifyContent={"center"} direction={"column"} alignItems={"center"}>
             <Typography
               sx={{
