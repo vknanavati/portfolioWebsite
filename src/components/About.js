@@ -36,9 +36,9 @@ export function About() {
                             sx={{fontFamily: "'Tilt Neon', sans-serif"}}
                         >
                             My name is Vimin Nanavati and I am a self-taught developer
-                            with experience in HTML, CSS, JavaScript, jQuery, React, React Router and Material UI.
+                            with experience in HTML, CSS, JavaScript, jQuery, React, and Material UI.
                             Over the past two years I've immersed myself in building projects that
-                            have honed my skills and have deepened my understanding of web development.
+                            have honed my skills and deepened my understanding of web development.
                         </Typography>
                     </Grid>
                 </Grid>
@@ -57,15 +57,13 @@ export function About() {
                 >
                     <Grid marginBottom={1}>
                         <Typography variant="body">
-                            My first project was building a simple counter app.
-                            Through this app I learned the basics of React and the useState hook.
+                            One of my key projects is a Recipe Search application which is a culmination of the skills I have attained.
+                            In this application I have applied the concepts of React Router, pagination, component organization, state management, and side effects.
                         </Typography>
                     </Grid>
                     <Grid marginBottom={1}>
                         <Typography variant="body">
-                            I expanded my understanding of useState and began exploring
-                            error handling through a To Do List app which allows the user
-                            to add a task and delete as needed.
+                        When I started my journey learning React, I built small projects like a counter app, which helped me understand the useState hook.
                         </Typography>
                     </Grid>
                     <Grid marginBottom={1}>
@@ -82,13 +80,12 @@ export function About() {
                     </Grid>
                     <Grid marginBottom={1}>
                         <Typography variant="body">
-                            I further practiced API integration in React by building a weather application
-                            that displays live weather data.
+                        Throughout each project, I used Material UI to style the user interfaces, and I continually focused on building clean, reusable components.
                         </Typography>
                     </Grid>
                     <Grid>
                         <Typography variant="body">
-                            Each project was styled using MaterialUI.
+                        My goal is to continue improving as a developer and contribute to creating well-designed web applications.
                         </Typography>
                     </Grid>
                 </Grid>
