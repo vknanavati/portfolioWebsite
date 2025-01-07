@@ -257,9 +257,9 @@ function App() {
         }
         sx={{
           '& .MuiDrawer-paper': {
-              width: 200,
-              marginTop: "70px",
-              height: "calc(100% - 70px)",
+              width: 300,
+              marginTop: "90px",
+              height: "calc(100% - 90px)",
               pt: 4,
               // backgroundColor: "#06052B",
               background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
@@ -294,7 +294,7 @@ function App() {
               <ListItemButton
               sx={{
                 '& .MuiListItemText-primary': {
-                  fontSize: "20px",
+                  fontSize: "30px",
                 }
               }}>
                 <ListItemText primary={project.name}/>
