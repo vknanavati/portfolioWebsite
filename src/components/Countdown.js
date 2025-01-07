@@ -72,7 +72,7 @@ export function Countdown() {
                 sx={{
                     textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                     fontFamily: "'Tilt Neon', sans-serif",
-                    fontSize: 40,
+                    fontSize: 70,
                     color: '#AEFFFF',
                     fontWeight: 800
                 }}
@@ -89,12 +89,12 @@ export function Countdown() {
                     <Grid item>
                         <TextField
                             sx={{
-                                width: 280,
+                                width: 360,
                                 "& .MuiInputBase-root": {
-                                    height: 46
+                                    height: 70
                                 },
                                 input: {
-                                    fontSize: 30,
+                                    fontSize: 40,
                                     color: "#FF00FF"
                                 },
                                 fieldset: {
@@ -122,7 +122,7 @@ export function Countdown() {
                             sx={{
                                 margin: 2,
                                 backgroundColor: "#FF00FF",
-                                fontSize: 18,
+                                fontSize: 25,
                                 fontWeight: 700,
                                 color: "#FFF",
                                 fontFamily: "Orbitron, sans-serif",
@@ -149,10 +149,10 @@ export function Countdown() {
                     container
                     marginTop={6}
                 >
-                    {<Typography fontSize={30} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{days !=="" ? `${days} days` : ""} </Typography>}
-                    {<Typography fontSize={30} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{hours !=="" ? `${hours} hours` : ""} </Typography>}
-                    {<Typography fontSize={30} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{minutes !=="" ? `${minutes} minutes` : ""} </Typography>}
-                    {<Typography fontSize={30} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{seconds !=="" ? `${seconds} seconds`: ""} </Typography>}
+                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{days !=="" ? `${days} days` : ""} </Typography>}
+                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{hours !=="" ? `${hours} hours` : ""} </Typography>}
+                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{minutes !=="" ? `${minutes} minutes` : ""} </Typography>}
+                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{seconds !=="" ? `${seconds} seconds`: ""} </Typography>}
                 </Grid>
                 )}
           </form>
