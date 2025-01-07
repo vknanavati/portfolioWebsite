@@ -186,7 +186,7 @@ function App() {
                 //   textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                 // },
                 fontFamily: "'Tilt Neon', sans-serif",
-                fontSize: 25,
+                fontSize: 40,
                 fontStyle: "italic",
                 textTransform: "none",
                 color: "#AEFFFF",
@@ -218,7 +218,7 @@ function App() {
                     textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: 35,
+                  fontSize: 50,
                   color: '#AEFFFF',
                   fontWeight: 800,
                 }}
@@ -237,7 +237,7 @@ function App() {
                     textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: 35,
+                  fontSize: 50,
                   color: "#AEFFFF",
                   fontWeight: 800,
                 }}
