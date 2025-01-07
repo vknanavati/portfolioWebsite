@@ -55,7 +55,7 @@ export function CurrencyTwo() {
                     sx={{
                         textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                         fontFamily: "'Tilt Neon', sans-serif",
-                        fontSize: 40,
+                        fontSize: 70,
                         color: '#AEFFFF',
                         fontWeight: 800,
                     }}
@@ -72,7 +72,7 @@ export function CurrencyTwo() {
                         >
                             <TextField
                                   sx={{
-                                    width: 160,
+                                    width: 360,
                                     fieldset: {
                                         borderColor: "#FF00FF"
                                     },
@@ -80,17 +80,16 @@ export function CurrencyTwo() {
                                         fontFamily: "Orbitron, sans-serif"
                                     },
                                     "& .MuiInputBase-root": {
-                                      height: 60
+                                      height: 70
                                     },
                                     input: {
                                       textAlign: "center",
-                                      fontSize: 30,
+                                      fontSize: 40,
                                       color: "#FF00FF"
                                     },
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                       borderColor: "#FF00FF"
                                     },
-
                                     '& .MuiOutlinedInput-root:hover fieldset': {
                                         borderColor: '#FF00FF',},
                                   }}
@@ -104,7 +103,7 @@ export function CurrencyTwo() {
                             container
                             justifyContent={"center"}
                         >
-                            <Grid margin={3}>
+                            <Grid margin={7}>
                                 <FormControl sx={{width: 120}}>
                                     <InputLabel
                                         sx={{
@@ -113,16 +112,20 @@ export function CurrencyTwo() {
                                             '&.MuiInputLabel-shrink':{
                                                 color:"#FF00FF"
                                             },
-                                            fontSize: 25
+                                            fontSize: 25,
+                                            fontFamily: "Orbitron, sans-serif"
                                         }}
                                     >
                                         From
                                     </InputLabel>
                                     <Select
-                                       sx={{
+                                        sx={{
                                             '.MuiOutlinedInput-notchedOutline': {
-                                                borderColor: "#FF00FF"},
-
+                                                borderColor: "#FF00FF",
+                                                '& legend': {
+                                                    width: "70px"
+                                                },
+                                            },
                                             "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
                                                 borderColor: "#FF00FF"
                                             },
@@ -133,7 +136,9 @@ export function CurrencyTwo() {
                                                 fill: "#FF00FF",
                                             },
                                             fontSize: 25,
-                                            color: "#FF00FF"
+                                            color: "#FF00FF",
+                                            width: 150,
+                                            paddingTop: "3px"
                                         }}
                                         label="From"
                                         onChange={e=>setFrom(e.target.value)}
@@ -144,7 +149,7 @@ export function CurrencyTwo() {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid margin={3}>
+                            <Grid margin={7}>
                                 <FormControl sx={{width: 120}}>
                                     <InputLabel
                                         sx={{
@@ -153,7 +158,8 @@ export function CurrencyTwo() {
                                             '&.MuiInputLabel-shrink':{
                                                 color:"#FF00FF"
                                             },
-                                            fontSize: 25
+                                            fontSize: 25,
+                                            fontFamily: "Orbitron, sans-serif"
                                         }}
                                     >
                                         To
@@ -161,7 +167,11 @@ export function CurrencyTwo() {
                                     <Select
                                         sx={{
                                             '.MuiOutlinedInput-notchedOutline': {
-                                                borderColor: "#FF00FF"},
+                                                borderColor: "#FF00FF",
+                                                '& legend': {
+                                                    width: "70px"
+                                                },
+                                            },
 
                                             "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
                                                 borderColor: "#FF00FF"
@@ -173,7 +183,9 @@ export function CurrencyTwo() {
                                                 fill: "#FF00FF",
                                             },
                                             fontSize: 25,
-                                            color: "#FF00FF"
+                                            color: "#FF00FF",
+                                            width: 130,
+                                            paddingTop: "3px"
                                         }}
                                         label="To"
                                         onChange={e=>setTo(e.target.value)}
@@ -194,9 +206,9 @@ export function CurrencyTwo() {
                             sx={{
                                 margin: 2,
                                 backgroundColor: "#FF00FF",
-                                fontSize: 18,
+                                fontSize: 25,
                                 fontWeight: 700,
-                                color: '#fff',
+                                color: "#FFF",
                                 fontFamily: "Orbitron, sans-serif",
                                 padding: "10px 25px",
                                 borderRadius: "4px",
@@ -214,7 +226,7 @@ export function CurrencyTwo() {
                         </Button>
                     </Grid>
                 </form>
-                {conversion && <Typography sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}} marginTop={5} fontSize={30}>{conversion.toFixed(2)} {to}</Typography>}
+                {conversion && <Typography sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}} marginTop={8} fontSize={40}>{conversion.toFixed(2)} {to}</Typography>}
             </Grid>
         </Container>
     )
