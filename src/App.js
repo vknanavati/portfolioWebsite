@@ -28,6 +28,7 @@ function App() {
   const [notes, setNotes] = useState("");
   const [notesList, setNotesList] = useState({});
   const [open, setOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
   const projects = [
     { name: 'Recipe Search', path: 'recipe/homeRecipe' },
@@ -39,6 +40,21 @@ function App() {
   // useEffect(()=>{
   //   localStorage.clear()
   // })
+
+  useEffect(()=> {
+    const handleScroll = () => {
+      if (window.scrollY > 68) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    };
+  }, []);
 
   // empty array dependency means useEffect runs once when the component mounts
   useEffect(()=>{
@@ -166,7 +182,14 @@ function App() {
 
   return (
     <Container maxWidth={"false"} disableGutters>
-      <AppBar position="fixed" sx={{ background: "transparent", boxShadow: "none", alignItems: "center" }}>
+      <AppBar
+        position="fixed"
+        sx={{
+          background: scrolling ? "linear-gradient(to right, #0D0D19E6, #260D26E6)" : "transparent",
+          boxShadow: "none",
+          alignItems: "center"
+        }}
+      >
         <Toolbar sx={{ width: "100%", position: "relative", paddingTop: 5 }}>
           <Box
             sx={{
@@ -182,9 +205,6 @@ function App() {
             <Button
               sx={{
                 textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
-                // "&:hover": {
-                //   textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
-                // },
                 fontFamily: "'Tilt Neon', sans-serif",
                 fontSize: 40,
                 fontStyle: "italic",
