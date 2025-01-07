@@ -4,6 +4,7 @@ import BACKGROUND from "../images/background.png"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
+import {Logo} from './Logo.js'
 
 export function Home() {
     return (
@@ -28,6 +29,7 @@ export function Home() {
                         justifyContent={"center"}
                         sx={{ flex: 1 }}
                     >
+                        <Logo/>
                     </Grid>
 
                     <Grid
