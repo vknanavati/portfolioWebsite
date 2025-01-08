@@ -1,9 +1,12 @@
 import {useState} from 'react';
-import {TextField, Container, Typography, FormControl, InputLabel, Select, MenuItem, Button} from '@mui/material';
+import {TextField, Container, Typography, FormControl, InputLabel, Select, MenuItem, Button, useTheme, useMediaQuery} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 export function CurrencyTwo() {
     console.log(process.env)
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const [amount, setAmount] = useState("");
     const [from, setFrom] = useState("");
@@ -53,10 +56,10 @@ export function CurrencyTwo() {
                 <Typography
                     marginTop={30}
                     sx={{
-                        textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                        textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
                         fontFamily: "'Tilt Neon', sans-serif",
-                        fontSize: 70,
-                        color: '#AEFFFF',
+                        fontSize: isMobile ? 40 : 70,
+                        color: "#AEFFFF",
                         fontWeight: 800,
                     }}
                 >
@@ -67,12 +70,14 @@ export function CurrencyTwo() {
                         <Grid
                             container
                             justifyContent={"center"}
-                            marginTop={5}
-                            marginBottom={5}
+                            sx={{
+                                marginTop: isMobile ? 2 : 5,
+                                marginBottom: isMobile ? 2 : 5
+                            }}
                         >
                             <TextField
                                   sx={{
-                                    width: 360,
+                                    width: isMobile ? "100%" : 360,
                                     fieldset: {
                                         borderColor: "#FF00FF"
                                     },
@@ -84,7 +89,7 @@ export function CurrencyTwo() {
                                     },
                                     input: {
                                       textAlign: "center",
-                                      fontSize: 40,
+                                      fontSize: isMobile ? 30 : 40,
                                       color: "#FF00FF"
                                     },
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -103,8 +108,8 @@ export function CurrencyTwo() {
                             container
                             justifyContent={"center"}
                         >
-                            <Grid margin={7}>
-                                <FormControl sx={{width: 120}}>
+                            <Grid sx={{ margin: isMobile ? 2 : 7}}>
+                                <FormControl sx={{width: isMobile ? "100%" : 120 }}>
                                     <InputLabel
                                         sx={{
                                             color: "#FF00FF",
@@ -149,7 +154,7 @@ export function CurrencyTwo() {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid margin={7}>
+                            <Grid sx={{ margin: isMobile ? 2 : 7}}>
                                 <FormControl sx={{width: 120}}>
                                     <InputLabel
                                         sx={{
