@@ -14,7 +14,7 @@ import {CurrencyTwo} from './components/CurrencyTwo';
 import {Countdown} from './components/Countdown';
 import {Counter} from './components/Counter';
 import {Wallpaper} from './components/Wallpaper'
-import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button, Drawer, ListItem, ListItemButton,ListItemText, List} from '@mui/material';
+import {AppBar, Toolbar, Box, Container, Typography, Alert, AlertTitle, Button, Drawer, ListItem, ListItemButton,ListItemText, List, useTheme, useMediaQuery} from '@mui/material';
 
 function App() {
 
@@ -36,6 +36,9 @@ function App() {
     { name: 'Countdown Timer', path: '/countdown' },
     { name: 'Currency Converter', path: '/currency'},
   ];
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   // useEffect(()=>{
   //   localStorage.clear()
@@ -190,19 +193,13 @@ function App() {
           alignItems: "center"
         }}
       >
-        <Toolbar
-          sx={{
-            width: "100%",
-            position: "relative",
-            paddingTop: { xs: 2, md: 5 },
-            flexDirection: { xs: "column", md: "row" }
-          }}>
+        <Toolbar sx={{ width: "100%", position: "relative", paddingTop: 5 }}>
           <Box
             sx={{
-                position: { xs: "static", md: "absolute" },
-                top: { md: "15px" },
-                padding: { xs: 1, md: 0 },
-                paddingLeft: { xs: 0, md: 4 },
+                position: "absolute",
+                top: "15px",
+                padding: 0,
+                paddingLeft: 4,
                 transition: "transform 0.3s ease-in-out",
                 "&:hover": {
                   transform: "scale(1.10)",},
@@ -212,7 +209,7 @@ function App() {
               sx={{
                 textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
                 fontFamily: "'Tilt Neon', sans-serif",
-                fontSize: { xs: 24, sm: 30, md: 40 },
+                fontSize: isMobile ? '10px' : '40px',
                 fontStyle: "italic",
                 textTransform: "none",
                 color: "#AEFFFF",
@@ -227,11 +224,10 @@ function App() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: { xs: 2, md: 4 },
+              gap: 4,
               whiteSpace: "nowrap",
               overflow: "auto",
-              flexGrow: 1,
-              flexDirection: { xs: "column", md: "row" }
+              flexGrow: 1
             }}
           >
             <Typography
@@ -245,7 +241,7 @@ function App() {
                     textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: { xs: 30, sm: 40, md: 50 },
+                  fontSize: isMobile ? '20px' : '50px',
                   color: '#AEFFFF',
                   fontWeight: 800,
                 }}
@@ -264,7 +260,7 @@ function App() {
                     textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: { xs: 30, sm: 40, md: 50 },
+                  fontSize: isMobile ? '20px' : '50px',
                   color: "#AEFFFF",
                   fontWeight: 800,
                 }}
@@ -284,17 +280,17 @@ function App() {
         }
         sx={{
           '& .MuiDrawer-paper': {
-              width: { xs: "100%", sm: 300},
-              marginTop: { xs: "70px", sm: "90px"},
-              height: { xs: "calc(100% - 70px)", md: "calc(100% - 90px)"},
-              pt: { xs: 2, md: 4 },
+              width: 300,
+              marginTop: "90px",
+              height: "calc(100% - 90px)",
+              pt: 4,
               // backgroundColor: "#06052B",
               background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
               //brighter alternative: #060940
               borderTop: "2px solid #FF00FF",
               borderRight: "2px solid #FF00FF",
               boxShadow: "0 0 20px #FF00FF",
-              borderTopRightRadius: { xs: 0, sm: "20px"}
+              borderTopRightRadius: "20px"
             },
         }}
       >
