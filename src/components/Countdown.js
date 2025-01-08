@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react';
-import {Container, Typography, Button, TextField} from '@mui/material';
+import {Container, Typography, Button, TextField, useTheme, useMediaQuery} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 export function Countdown() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
     const [input, setInput] = useState("");
     const [date, setDate] = useState(0);
     const [days, setDays] = useState("");
@@ -70,10 +73,10 @@ export function Countdown() {
                 marginTop={30}
                 marginBottom={5}
                 sx={{
-                    textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
+                    textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
                     fontFamily: "'Tilt Neon', sans-serif",
-                    fontSize: 70,
-                    color: '#AEFFFF',
+                    fontSize: isMobile ? 45: 70,
+                    color: "#AEFFFF",
                     fontWeight: 800
                 }}
             >
@@ -89,11 +92,12 @@ export function Countdown() {
                     <Grid item>
                         <TextField
                             sx={{
-                                width: 360,
+                                width: isMobile ? '90%' : 360,
                                 "& .MuiInputBase-root": {
-                                    height: 70
+                                    height: isMobile ? 50 : 70,
                                 },
                                 input: {
+                                    textAlign: isMobile ? "center" : "",
                                     fontSize: 40,
                                     color: "#FF00FF"
                                 },
@@ -122,11 +126,11 @@ export function Countdown() {
                             sx={{
                                 margin: 2,
                                 backgroundColor: "#FF00FF",
-                                fontSize: 25,
+                                fontSize: isMobile ? 20 : 25,
                                 fontWeight: 700,
                                 color: "#FFF",
                                 fontFamily: "Orbitron, sans-serif",
-                                padding: "10px 25px",
+                                padding: isMobile ? "8px 20px" : "10px 25px",
                                 borderRadius: "4px",
                                 textTransform: "none",
                                 boxShadow: "0 0 10px #FF00FF, 0 0 20px #FF00FF",
@@ -142,17 +146,18 @@ export function Countdown() {
                     </Grid>
                 </Grid>
                 <Grid>
-                    {errorMessage && <Typography color={"#F61297"} fontSize={25} margin={1}>{errorMessage} </Typography>}
+                    {errorMessage && <Typography color={"#F61297"} sx={{fontSize: isMobile ? 20 : 25, margin: 1}}>{errorMessage} </Typography>}
                 </Grid>
                 {countdown && (
                 <Grid
                     container
-                    marginTop={6}
+                    sx={{ marginTop: isMobile ? 2 : 6}}
+                    justifyContent={"center"}
                 >
-                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{days !=="" ? `${days} days` : ""} </Typography>}
-                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{hours !=="" ? `${hours} hours` : ""} </Typography>}
-                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{minutes !=="" ? `${minutes} minutes` : ""} </Typography>}
-                    {<Typography fontSize={40} margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif"}}>{seconds !=="" ? `${seconds} seconds`: ""} </Typography>}
+                    {<Typography  margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif", fontSize: isMobile ? 30 : 40}}>{days !=="" ? `${days} days` : ""} </Typography>}
+                    {<Typography margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif", fontSize: isMobile ? 30 : 40}}>{hours !=="" ? `${hours} hours` : ""} </Typography>}
+                    {<Typography  margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif", fontSize: isMobile ? 30 : 40}}>{minutes !=="" ? `${minutes} minutes` : ""} </Typography>}
+                    {<Typography  margin={1} sx={{color: "#FF00FF", fontFamily: "Orbitron, sans-serif", fontSize: isMobile ? 30 : 40}}>{seconds !=="" ? `${seconds} seconds`: ""} </Typography>}
                 </Grid>
                 )}
           </form>
