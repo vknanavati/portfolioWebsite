@@ -190,13 +190,19 @@ function App() {
           alignItems: "center"
         }}
       >
-        <Toolbar sx={{ width: "100%", position: "relative", paddingTop: 5 }}>
+        <Toolbar
+          sx={{
+            width: "100%",
+            position: "relative",
+            paddingTop: { xs: 2, md: 5 },
+            flexDirection: { xs: "column", md: "row" }
+          }}>
           <Box
             sx={{
-                position: "absolute",
-                top: "15px",
-                padding: 0,
-                paddingLeft: 4,
+                position: { xs: "static", md: "absolute" },
+                top: { md: "15px" },
+                padding: { xs: 1, md: 0 },
+                paddingLeft: { xs: 0, md: 4 },
                 transition: "transform 0.3s ease-in-out",
                 "&:hover": {
                   transform: "scale(1.10)",},
@@ -206,7 +212,7 @@ function App() {
               sx={{
                 textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
                 fontFamily: "'Tilt Neon', sans-serif",
-                fontSize: 40,
+                fontSize: { xs: 24, sm: 30, md: 40 },
                 fontStyle: "italic",
                 textTransform: "none",
                 color: "#AEFFFF",
@@ -221,10 +227,11 @@ function App() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: 4,
+              gap: { xs: 2, md: 4 },
               whiteSpace: "nowrap",
               overflow: "auto",
-              flexGrow: 1
+              flexGrow: 1,
+              flexDirection: { xs: "column", md: "row" }
             }}
           >
             <Typography
@@ -238,7 +245,7 @@ function App() {
                     textShadow: '0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF',
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: 50,
+                  fontSize: { xs: 30, sm: 40, md: 50 },
                   color: '#AEFFFF',
                   fontWeight: 800,
                 }}
@@ -257,7 +264,7 @@ function App() {
                     textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
                   },
                   fontFamily: "'Tilt Neon', sans-serif",
-                  fontSize: 50,
+                  fontSize: { xs: 30, sm: 40, md: 50 },
                   color: "#AEFFFF",
                   fontWeight: 800,
                 }}
@@ -277,17 +284,17 @@ function App() {
         }
         sx={{
           '& .MuiDrawer-paper': {
-              width: 300,
-              marginTop: "90px",
-              height: "calc(100% - 90px)",
-              pt: 4,
+              width: { xs: "100%", sm: 300},
+              marginTop: { xs: "70px", sm: "90px"},
+              height: { xs: "calc(100% - 70px)", md: "calc(100% - 90px)"},
+              pt: { xs: 2, md: 4 },
               // backgroundColor: "#06052B",
               background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
               //brighter alternative: #060940
               borderTop: "2px solid #FF00FF",
               borderRight: "2px solid #FF00FF",
               boxShadow: "0 0 20px #FF00FF",
-              borderTopRightRadius: "20px"
+              borderTopRightRadius: { xs: 0, sm: "20px"}
             },
         }}
       >
