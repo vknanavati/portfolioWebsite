@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { Container, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem, CircularProgress, Paper} from '@mui/material';
+import { Container, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem, CircularProgress, Paper, useTheme, useMediaQuery} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 export function Hostel() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const [country, setCountry] = useState("");
   const [continent, setContinent] = useState("");
   const [city, setCity] = useState("");
@@ -116,7 +119,7 @@ export function Hostel() {
             textAlign: "center",
             textShadow: "0 0 20px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF",
             fontFamily: "'Tilt Neon', sans-serif",
-            fontSize: 40,
+            fontSize: isMobile ? '25px' : '50px',
             color: '#AEFFFF',
             fontWeight: 800,
 
@@ -128,25 +131,28 @@ export function Hostel() {
         <Paper
           elevation={5}
           sx={{
-            paddingX: 10,
+            paddingX: isMobile ? 3 : 10,
             paddingY: 5,
+            maxWidth: isMobile ? "90%" : "70%",
+            margin: "0 auto",
             background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
             color: "#80DEEA",
             borderRadius: 7,
-            boxShadow: 6
+            boxShadow: 6,
+            wordWrap: "break-word"
           }}
         >
-          <Typography variant="body1" fontSize={25} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
+          <Typography variant="body1" sx={{fontFamily: "'Tilt Neon', sans-serif", fontSize: isMobile ? 18 : 25, textAlign: "center"}}>
             Welcome to the Hostel Ratings Comparison. Here you will be able to see bar graphs depicting the top hostels in the city of your choice.
             The first graph will rate the top 10 hostels by average overall rating. The subsequent graphs rank each hostel by their rating in specific categories.
             The categories shown are Security, Location, Staff, Atmosphere, Cleanliness, Value, and Facilities.
             <br/>
             <br/>
           </Typography>
-          <Typography fontSize={30} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
+          <Typography sx={{fontFamily: "'Tilt Neon', sans-serif", fontSize: isMobile ? 25 : 30, textAlign: "center"}}>
             How to Use this App
           </Typography>
-          <Typography variant="body1" fontSize={25} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
+          <Typography variant="body1"  sx={{fontFamily: "'Tilt Neon', sans-serif", fontSize: isMobile ? 18 : 25, textAlign: "left", lineHeight: 2}}>
             <br/>
             1. Type the country of your choice into the input box and click 'submit'.<br/>
             2. Wait for a dropdown box to appear. This may take a few moments. <br/>
@@ -155,10 +161,10 @@ export function Hostel() {
             <br/>
             <br/>
           </Typography>
-          <Typography fontSize={30} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
+          <Typography sx={{fontFamily: "'Tilt Neon', sans-serif", fontSize: isMobile ? 25 : 30, textAlign: "center"}}>
            How it Works
           </Typography>
-          <Typography variant="body1" fontSize={25} sx={{fontFamily: "'Tilt Neon', sans-serif"}}>
+          <Typography variant="body1" sx={{fontFamily: "'Tilt Neon', sans-serif", fontSize: isMobile ? 18 : 25, textAlign: isMobile ? "center" : "left"}}>
             <br/>
             The frontend portion of this application uses React which is a JavaScript library for building user interfaces(UI).
             When the user enters a country name in the input field of the form, the app uses Fetch API to send this country name to the backend.
@@ -189,18 +195,19 @@ export function Hostel() {
             alignItems={"center"}
             sx={{marginBottom: 7}}
           >
-            <Grid>
+            <Grid item xs={12} sm={8} md={6}>
               <TextField
                 sx={{
                   "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                     borderColor: "#EF6AE8"
                   },
                   input: {
-                    fontSize: 25,
+                    fontSize: { xs: 18, sm: 20, md: 25 },
                     color: "black",
                     background: "white"
                   },
-                  fieldset: { borderColor: "black" }
+                  fieldset: { borderColor: "black" },
+                  marginBottom: isMobile ? 2 : 0
                 }}
                 type="text"
                 placeholder="Enter country"
@@ -208,7 +215,7 @@ export function Hostel() {
                 onChange={(e) => setCountry(e.target.value)}
               />
             </Grid>
-            <Grid>
+            <Grid item xs={12} sm={8} md={6}>
               <Button
                 type="submit"
                 variant="contained"
@@ -219,19 +226,22 @@ export function Hostel() {
                   "&:hover": {
                     backgroundColor: "#EF6AE8"
                   },
-                  fontSize: 20,
-                  fontWeight: 700
+                  fontSize: { xs: 16, sm: 18, md: 20 },
+                  fontWeight: 700,
+                  paddingY: 2,
                 }}
               >
                 Submit
               </Button>
             </Grid>
           </Grid>
+
           {loading &&
             <Grid
               container
               justifyContent={"center"}
-              marginLeft={"-50px"}
+              alignItems={"center"}
+              sx={{marginTop: 3}}
             >
               <CircularProgress size="3rem" sx={{color: "#EF6AE8" }}/>
             </Grid>
@@ -242,27 +252,31 @@ export function Hostel() {
               color={"red"}
               textAlign={"center"}
               fontSize={25}
-              marginLeft={"-30px"}
+              sx={{ marginTop: 2 }}
             >
               {error}
             </Typography>
           }
+
           {response && (
           <Grid
             container
             marginTop={5}
             justifyContent={"center"}
+            alignItems={"center"}
           >
-            <Grid>
-              <FormControl sx={{width: 290, background: "white", padding: 2, }}>
+            <Grid item xs={12} sm={8} md={6}>
+              <FormControl sx={{ background: "white", padding: 2, }}>
                 <InputLabel
                   sx={{
                     '&.MuiInputLabel-shrink':{
                       color:"black"
                     },
-                    fontSize: 30,
+                    fontSize: { xs: 15, sm: 25, md: 30 },
                     marginLeft: 1,
-                    paddingTop: 1
+
+                    transform: isMobile ? "translate(25px, 5px)" : "",
+                    paddingTop: isMobile ? "0" : "10px"
                   }}
                 >
                   Choose City
@@ -272,7 +286,9 @@ export function Hostel() {
                     "&.Mui-focused .MuiOutlinedInput-notchedOutline":{
                       borderColor: "#EF6AE8",
                     },
-                    fontSize: 25,
+                    fontSize: { xs: 20, sm: 22, md: 25 },
+                    width: 200
+
                   }}
                   label="Choose City"
                   value={city}
