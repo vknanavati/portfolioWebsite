@@ -209,7 +209,7 @@ function App() {
               sx={{
                 textShadow: "1px 1px 2px #00FFFF, 0 0 35px #00FFFF, 0 0 10.5px #00FFFF",
                 fontFamily: "'Tilt Neon', sans-serif",
-                fontSize: isMobile ? '10px' : '40px',
+                fontSize: isMobile ? "15px" : "40px",
                 fontStyle: "italic",
                 textTransform: "none",
                 color: "#AEFFFF",
