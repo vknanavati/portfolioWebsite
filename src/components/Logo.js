@@ -5,7 +5,7 @@ export function Logo() {
         <Box
             sx={{
 
-                width: { xs: "90%", sm: "80%", md: "70%"},
+                width: { xs: "70%", sm: "70%", md: "70%"},
                 margin: "0 auto",
                 padding: { xs: 2, sm: 4, md: 6},
                 color: "white",
