@@ -278,19 +278,19 @@ function App() {
         onClose={(_, reason) =>
           reason === "backdropClick" && setOpen(false)
         }
+        onClick={()=>setOpen(false)}
         sx={{
           '& .MuiDrawer-paper': {
-              width: 300,
-              marginTop: "90px",
-              height: "calc(100% - 90px)",
-              pt: 4,
-              // backgroundColor: "#06052B",
+              width: isMobile ? "100%" : 300,
+              alignItems: isMobile ? "center" : "",
+              marginTop: isMobile ? "60px" : "90px",
+              height: isMobile ? "calc(100% - 60px)" : "calc(100% - 90px)",
+              pt: isMobile ? 2 : 4,
               background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
-              //brighter alternative: #060940
               borderTop: "2px solid #FF00FF",
               borderRight: "2px solid #FF00FF",
               boxShadow: "0 0 20px #FF00FF",
-              borderTopRightRadius: "20px"
+              borderTopRightRadius: isMobile ? "0" : "20px"
             },
         }}
       >
