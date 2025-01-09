@@ -29,14 +29,13 @@ export function RecipeCard ({recipe, addFavorite, addMakeRecipe, favorites}) {
             variant="plain"
             onClick={()=>addFavorite(recipe)}
           >
-            <FavoriteOutlined sx={{ color: "red"}}/>
+            <FavoriteOutlined sx={{ color: "red" }}/>
           </IconButton>
         ):(
           <IconButton onClick={()=>addFavorite(recipe)}>
             <FavoriteBorder/>
           </IconButton>
         )}
-
         <Grid>
           <Button
             onClick={()=>addMakeRecipe(recipe)}
@@ -47,15 +46,14 @@ export function RecipeCard ({recipe, addFavorite, addMakeRecipe, favorites}) {
         <Typography variant="h6" >{recipe.label}</Typography>
         <img
           style={{
-          maxWidth: "100%",
-          height: "auto",
-          display: "block",
-          margin: "0 auto",
+            maxWidth: "100%",
+            height: "auto",
+            display: "block",
+            margin: "0 auto",
           }}
           alt="food-photo"
           src={recipe.image}
         />
-
         <Typography sx={{wordWrap: "break-word", marginTop: 2}}>
             <a href={recipe.url} target="_blank" rel="noopener noreferrer">
           Full Recipe
