@@ -14,13 +14,13 @@ export function Wallpaper({children}) {
             display: 'flex',
             flexDirection: 'column',
             overflow: 'hidden',
-            backgroundAttachment: 'fixed'
+            backgroundAttachment: { xs: 'scroll', sm: 'fixed' }
         }}
         >
             <Box
                 sx={{
                     width: '100%',
-                    overflowX: 'auto',
+                    overflowX: 'hidden',
                     display: 'flex',
                     flexDirection: 'column'
                 }}
