@@ -6,6 +6,7 @@ import IconButton from '@mui/joy/IconButton';
 
 
 export function MakeRecipeCard({recipe, addGrocery, groceryList}) {
+
     return(
         <Grid
             sm={8}
@@ -21,7 +22,12 @@ export function MakeRecipeCard({recipe, addGrocery, groceryList}) {
             }}
         >
             <Typography variant="h5" sx={{marginBottom: 2}}>{recipe.label}</Typography>
-            <img alt="food-photo" src={recipe.image}/>
+            <img  style={{
+            maxWidth: "100%",
+            height: "auto",
+            display: "block",
+            margin: "0 auto",
+          }}alt="food-photo" src={recipe.image}/>
             <Grid sx={{marginTop: 2, marginBottom: 2}}>
                 <Typography variant="subtitle" sx={{fontWeight: 700, fontSize: 20}}>Ingredients:</Typography>
             </Grid>
