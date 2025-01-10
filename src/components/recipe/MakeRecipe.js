@@ -1,11 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { DisplayFiltered } from "./DisplayFiltered";
 import { FirstRecipe } from "./FirstRecipe";
 import Grid from '@mui/material/Grid2';
-import {Container, Drawer, List, ListItemButton, ListItem, ListItemText} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
+import {Container, Drawer, List, ListItemButton, ListItem, ListItemText, useTheme, useMediaQuery} from '@mui/material';
 
 export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe, setFilteredRecipe, notes, setNotesList, setNotes, notesList, addMakeRecipe}) {
 
+    const [openDrawer, setOpenDrawer] = useState(false);
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+
+    const handleToggleDrawer = () => {
+        setOpenDrawer(prevState => !prevState)
+    }
 
     useEffect(() => {
         console.log("filteredRecipe updated: ", JSON.stringify(filteredRecipe));
@@ -58,18 +69,38 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
     }
 
     return (
-        <Container sx={{ paddingTop: '170px' }}>
+        <Container sx={{ paddingTop: "170px" }}>
+
+            {isMobile && (
+                    <IconButton
+                        onClick={handleToggleDrawer}
+                        sx={{
+                            position: "fixed",
+                            left: "16p",
+                            zIndex: 1200,
+                            color: "#00FFFF",
+                            backgroundColor: "#140A26F2",
+                            '&:hover': {
+                                backgroundColor: "#06052B",
+                            }
+                        }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                )}
+
             <Drawer
-                variant="permanent"
+                variant={isMobile ? "temporary" : "permanent"}
+                open={isMobile ? openDrawer : false}
+                // onClose={handleToggleDrawer}
+                onClick={() => setOpenDrawer(false)}
                 anchor="left"
                 sx={{
                     '& .MuiDrawer-paper': {
-                        width: 240,
-                        marginTop: "190px",
+                        width: isMobile ? (openDrawer ? 240 : 56) : 240,
+                        marginTop: isMobile ? "230px" : "190px",
                         // height: 'calc(100% - 64px)',
-                        // backgroundColor: '#F61297',
                         background: "linear-gradient(145deg, #140A26F2, #580F58E6)",
-                        // backdropFilter: 'blur(10px)',
                     }
                 }}
             >
