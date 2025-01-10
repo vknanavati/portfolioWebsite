@@ -1,4 +1,4 @@
-import {Typography, Button, Box} from '@mui/material';
+import {Typography, Button, Box, useTheme, useMediaQuery} from '@mui/material';
 import Textarea from '@mui/joy/Textarea';
 import Grid from '@mui/material/Grid2';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
@@ -7,44 +7,62 @@ import { MakeRecipeCard } from "./MakeRecipeCard";
 
 
 export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, notesList, handleSubmit, handleNoteChange, addMakeRecipe, handleRemoveNote, filteredRecipe}) {
-    return(
 
-        <Grid container>
-        <Box display="flex" justifyContent={"flex-end"} sx={{width: '100%'}}>
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+    return (
+
+        <Grid container direction="column" alignItems="center" sx={{ width: "100%", boxSizing: "border-box" }}>
+
+        <Box display="flex" justifyContent={"flex-end"} sx={ {width: "100%", maxWidth: "100%", padding: 2 }}>
             <Button
                 variant="contained"
-                sx={{ marginLeft: 'auto', backgroundColor: '#F61297' }}
+                sx={{
+                    marginLeft: "auto",
+                    backgroundColor: "#F61297",
+                    marginRight: isMobile ? 5 : 0,
+                    maxWidth: "100%",
+                    padding: "10px 20px",
+                    boxSizing: "border-box"
+                }}
                 onClick={()=>addMakeRecipe(makeRecipe)}
                 >
                 Remove Recipe
             </Button>
         </Box>
 
-        <Grid sx={{marginLeft: 20}}>
+        <Grid container justifyContent="center" sx={{ marginTop: 2, width: "100%", maxWidth: "100%" }}>
             <MakeRecipeCard
                 recipe={makeRecipe}
                 addGrocery={addGrocery}
                 key={makeRecipe.label}
                 groceryList={groceryList}
+                sx={{
+                    width: isMobile ? "90%" : "60%",
+                    maxWidth: "100%",
+                    margin: "0 auto",
+                    boxSizing: "border-box"
+                  }}
             />
         </Grid>
 
         {/* switched makeRecipe.length to makeRecipe otherwise notes and grocery list wouldn't render*/}
         {makeRecipe && (
-            <Grid>
+            <Grid container justifyContent="center" sx={{ width: "100%", maxWidth: "100%", marginTop: 4, gap: isMobile ? 0 : 3 }}>
                 <Grid
-                    sm={8}
+                    justifyContent="center"
                     sx={{
                         boxShadow: 6,
                         padding: 2,
                         textAlign: "center",
-                        width: "370px",
+                        width: isMobile ? "90%" : "370px",
                         height: "auto",
-                        marginLeft: 20,
-                        marginTop: 4,
                         marginBottom: 10,
                         borderRadius: 3,
-                        backgroundColor: "white"
+                        backgroundColor: "white",
+                        maxWidth: "100%",
+                        boxSizing: "border-box"
                     }}
                 >
                     <Typography
@@ -72,12 +90,12 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
                         {notesList[makeRecipe.label].map((userNote, i) => {
                             return (
 
-                            <Grid container alignItems={"center"}>
+                            <Grid container alignItems={"center"} justifyContent="center">
                                 <Grid>
-                                    <li><Typography sx={{ fontSize: 20}}>{userNote}</Typography></li>
+                                    <li><Typography sx={{ fontSize: 20, textAlign: "center"}}>{userNote}</Typography></li>
                                 </Grid>
                                 <Grid>
-                                    <IconButton onClick={() => console.log("Remove Note", userNote)}>
+                                    <IconButton onClick={() => handleRemoveNote(userNote, makeRecipe.label)}>
                                         <RemoveCircleIcon />
                                     </IconButton>
                                 </Grid>
@@ -87,20 +105,22 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
                         </ul>
                     )}
                 </Grid>
+
                     <form onSubmit={(e)=>handleSubmit(e, makeRecipe.label)}>
                         <Grid
-
+                            container
+                            justifyContent="center"
                             sx={{
                                 boxShadow: 6,
                                 padding: 2,
                                 textAlign: "center",
-                                width: "370px",
+                                width: isMobile ? "90%" : "370px",
                                 height: "auto",
-                                marginLeft: 20,
-                                marginTop: 4,
                                 marginBottom: 10,
                                 borderRadius: 3,
-                                backgroundColor: "white"
+                                backgroundColor: "white",
+                                maxWidth: "100%",
+                                boxSizing: "border-box"
                             }}
                         >
                             <Typography variant="h5" sx={{ marginBottom: 2 }}>Notes</Typography>
@@ -108,7 +128,9 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
                                 type={"text"}
                                 value={notes}
                                 onChange={(e)=>handleNoteChange(e)}
-                                placeholder="Recipe notes" />
+                                placeholder="Recipe notes"
+                                sx={{ width: "100%", marginBottom: 2 }}
+                                 />
                             <Button type="submit">Save</Button>
                         </Grid>
                     </form>
