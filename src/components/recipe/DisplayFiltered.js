@@ -10,6 +10,8 @@ export function DisplayFiltered({makeRecipe, groceryList, addGrocery, notes, not
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    console.log("DISPLAY FILTERED RENDERED")
+    console.log("DISPLAY RENDERED makeRecipe: ", makeRecipe)
 
     return (
 
