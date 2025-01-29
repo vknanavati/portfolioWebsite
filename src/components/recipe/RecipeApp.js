@@ -55,7 +55,7 @@ export function RecipeApp({makeRecipe, favorites}) {
             </Typography>
             <Typography variant="h6" component={Link} to="/recipe/make" sx={{ textDecoration: 'none', ...navLinkStyles }}>
               Recipes ({makeRecipe.length !== null && (makeRecipe.length) })
-              {console.log("****MAKE RECIPE NAV LINK: ", makeRecipe.length > 0 && (makeRecipe.length))}
+              {/* {console.log("****MAKE RECIPE NAV LINK: ", makeRecipe.length > 0 && (makeRecipe.length))} */}
             </Typography>
           </Box>
         </Toolbar>
