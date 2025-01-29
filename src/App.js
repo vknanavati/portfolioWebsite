@@ -31,10 +31,12 @@ function App() {
   const [scrolling, setScrolling] = useState(false);
 
   const projects = [
+
     { name: 'Recipe Search', path: 'recipe/homeRecipe' },
     { name: 'Hostel Comparer', path: '/hostel' },
     { name: 'Countdown Timer', path: '/countdown' },
     { name: 'Currency Converter', path: '/currency'},
+
   ];
 
   const theme = useTheme();
@@ -95,12 +97,12 @@ function App() {
     if (notesList !== null && Object.keys(notesList).length > 0) {localStorage.setItem("notes", JSON.stringify(notesList))};
   }, [notesList]);
 
-  useEffect(() => {
-    console.log("groceryList updated: ", JSON.stringify(groceryList));
-    console.log("makeRecipe updated: ", JSON.stringify(makeRecipe));
-    console.log("favorites updated: ", JSON.stringify(favorites));
-    console.log("Favorites LENGTH: ", favorites.length)
-  }, [groceryList, makeRecipe, favorites]);
+  // useEffect(() => {
+  //   console.log("groceryList updated: ", JSON.stringify(groceryList));
+  //   console.log("makeRecipe updated: ", JSON.stringify(makeRecipe));
+  //   console.log("favorites updated: ", JSON.stringify(favorites));
+  //   console.log("Favorites LENGTH: ", favorites.length)
+  // }, [groceryList, makeRecipe, favorites]);
 
   const handleDrawerClose = () => {
     setOpen(false);
@@ -166,6 +168,7 @@ function App() {
       console.log("currentIngredients: ", currentIngredients);
       console.log("before adding new ingredient to groceryObject ", groceryObject);
       console.log("recipeName: ", recipeName);
+      console.log("grocery object: ", groceryObject)
 
       if (!currentIngredients.includes(ingredient)) {
 
@@ -333,11 +336,11 @@ function App() {
           onClose={() => setAlertFavorite(false)}
           sx={{
             position: "fixed",
-            top: "30px",// 20px from the top of the screen
-            left: "50%", //left edge of alert at half the viewport width
-            transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
-            width: "auto", // adjust width based on content
-            zIndex: 9999 // alert appears above other content
+            top: "30px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "auto",
+            zIndex: 9999
           }}
         >
           <AlertTitle>Success</AlertTitle>
@@ -349,11 +352,11 @@ function App() {
           severity="success"
           sx={{
             position: "fixed",
-            top: "30px",// 20px from the top of the screen
-            left: "50%", //left edge of alert at half the viewport width
-            transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
-            width: "auto", // adjust width based on content
-            zIndex: 9999 // alert appears above other content
+            top: "30px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "auto",
+            zIndex: 9999
           }}
         >
           <AlertTitle>Success</AlertTitle>
@@ -366,11 +369,11 @@ function App() {
           onClose={() => setAlertFavorite(false)}
           sx={{
             position: "fixed",
-            top: "30px",// 20px from the top of the screen
-            left: "50%", //left edge of alert at half the viewport width
-            transform: "translateX(-50%)", // moves alert to the left at half the width of the alert box
-            width: "auto", // adjust width based on content
-            zIndex: 9999 // alert appears above other content
+            top: "30px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "auto",
+            zIndex: 9999
           }}
         >
           Removed Recipe
