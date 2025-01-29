@@ -19,8 +19,8 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
     }
 
     useEffect(() => {
-        console.log("filteredRecipe updated: ", JSON.stringify(filteredRecipe));
-        console.log("filteredRecipe length: ", filteredRecipe.length)
+        // console.log("filteredRecipe updated: ", JSON.stringify(filteredRecipe));
+        // console.log("filteredRecipe length: ", filteredRecipe.length)
         console.log("notesList: ", notesList)
 
     }, [filteredRecipe, notesList]);
@@ -29,6 +29,7 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
     //triggered when you click on a recipe in the side drawer
     const selectedRecipe = (choice) => {
         const filtered = makeRecipe.filter(item => item.label.includes(choice));
+        console.log("makeRecipe triggered by selectedRecipe function: ", makeRecipe)
         console.log("choice: ", choice);
         setFilteredRecipe(filtered);
         console.log("filtered:", filtered);
@@ -37,7 +38,8 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
     const handleNoteChange = (e) => {
         const input = e.target.value
         setNotes(input)
-        console.log("NOTES: ", notes)
+        // console.log("NOTES: ", notes)
+        console.log("NOTES(from input value): ", input)
     }
     // recipe is the recipe name
     const handleSubmit = (e, recipe) => {
@@ -61,7 +63,9 @@ export function MakeRecipe({makeRecipe, addGrocery, groceryList, filteredRecipe,
      setNotesList((notesObject)=>{
         const currentNotes = notesObject[recipe] || [];
         //create new array of notes without the note to be deleted
-        const updatedNotes = currentNotes.filter((item)=> item !== note)
+        const updatedNotes = currentNotes.filter((item)=> item !== note);
+        console.log("note removed handleRemoveNote: ", note);
+        console.log("recipe in handleRemoveNote: ", recipe);
         //set updatedNotes for the recipe passed through function
         return {...notesObject, [recipe]: updatedNotes}
 
