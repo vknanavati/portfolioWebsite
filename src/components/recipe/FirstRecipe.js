@@ -76,7 +76,7 @@ export function FirstRecipe({ makeRecipe, groceryList, addGrocery, notes, notesL
                     <ol>
                         {groceryList[firstRecipe.label].map((item, i) => (
                         <Grid container key={i}>
-                            <Grid item >
+                            <Grid>
                             <li><Typography sx={{ fontSize: 20}}>{item}</Typography></li>
                             </Grid>
                         </Grid>
