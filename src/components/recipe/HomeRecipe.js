@@ -8,7 +8,8 @@ export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, se
 
     useEffect(()=>{
       console.log("recipeData: ", recipeData)
-    }, [recipeData]);
+      console.log("foodData: ", foodData)
+    }, [recipeData, foodData]);
 
     const handleClick = (cusineType) => {
       console.log("Searching city: ", cusineType, process.env.REACT_APP_RECIPE_KEY, process.env.REACT_APP_ID)
@@ -77,7 +78,7 @@ export function HomeRecipe({recipeData, setRecipeData, addFavorite, foodData, se
             </Grid>
           </Grid>
 
-        {recipeData.length > 0 && (
+        {recipeData && recipeData.length > 0 && (
           <Grid>
             <Grid container justifyContent={"center"} sx={{marginTop: 5}}>
                 {recipeData.map((hit, index) => {
